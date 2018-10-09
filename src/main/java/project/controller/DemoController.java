@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Small controller just to show that you can have multiple controllers
- * 
  * in your project
  */
 @Controller
