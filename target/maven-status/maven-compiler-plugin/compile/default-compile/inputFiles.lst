@@ -1,0 +1,9 @@
+/home/petur/Gits/SpringBootMVC-master/src/main/java/project/controller/HomeController.java
+/home/petur/Gits/SpringBootMVC-master/src/main/java/project/controller/PostitNoteController.java
+/home/petur/Gits/SpringBootMVC-master/src/main/java/project/persistence/repositories/PostitNoteRepository.java
+/home/petur/Gits/SpringBootMVC-master/src/main/java/project/service/Implementation/PostitNoteServiceImplementation.java
+/home/petur/Gits/SpringBootMVC-master/src/main/java/project/Application.java
+/home/petur/Gits/SpringBootMVC-master/src/main/java/project/service/PostitNoteService.java
+/home/petur/Gits/SpringBootMVC-master/src/main/java/project/service/StringManipulationService.java
+/home/petur/Gits/SpringBootMVC-master/src/main/java/project/persistence/entities/PostitNote.java
+/home/petur/Gits/SpringBootMVC-master/src/main/java/project/controller/DemoController.java
