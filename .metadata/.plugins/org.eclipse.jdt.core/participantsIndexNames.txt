@@ -1,9 +1,0 @@
-INDEX VERSION 1.131
-/home/petur/Gits/Orkulind/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2549382903.index
-/Orkulind/src/main/java
-/home/petur/Gits/Orkulind/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3831333829.index
-/Orkulind/src/main/java
-/home/petur/Gits/Orkulind/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1606433457.index
-/Orkulind/src/main/java
-/home/petur/Gits/Orkulind/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1812505038.index
-/Orkulind/src/main/java
