@@ -43,15 +43,15 @@
             <artifactId>hsqldb</artifactId>
             <scope>runtime</scope>
         </dependency>
-
-        <!--If you wish to connect this application to a PostgreSQL server then add the dependency below but remove the dependency above (the `hsqldb` one) -->
-        <!--
+<!-- 
         <dependency>
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.1-901-1.jdbc4</version>
         </dependency>
-        -->
+	
+
+ -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
