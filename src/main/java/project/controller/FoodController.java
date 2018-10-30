@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import project.service.StringManipulationService;
 
 @Controller
-public class HomeController {
+public class FoodController {
 
     // Instance Variables
     StringManipulationService stringService;
 
     // Dependency Injection
     @Autowired
-    public HomeController(StringManipulationService stringService) {
+    public FoodController(StringManipulationService stringService) {
         this.stringService = stringService;
     }
 
@@ -24,7 +24,7 @@ public class HomeController {
     // is running and you enter "localhost:8080" into a browser, this
     // method is called
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(){
+    public String food(){
 
         // The string "Index" that is returned here is the name of the view
         // (the Index.jsp file) that is in the path /main/webapp/WEB-INF/jsp/
@@ -33,18 +33,18 @@ public class HomeController {
         return "Index";
     }
 
-    // To call this method, enter "localhost:8080/user" into a browser
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public String user(Model model){
+    // To call this method, enter "localhost:8080/food" into a browser
+    @RequestMapping(value = "/food", method = RequestMethod.GET)
+    public String foodCon(Model model){
 
         // Here we will show how to add attributes to a model and send it to the view
 
         // Since this small example is for a user, let's create some attributes
         // that users might usually have in a system
-        String name = "Rincewind";
-        String job  = "Wizzard";
-        String email = "rincewizz@unseenuni.edu";
-        String description = "most likely to survive in a dungeon dimension.";
+        String name = "Kjúlli";
+        String meal  = "Kjúklingur";
+        String recipe = "Settu kjúklinginn í ofn þangað til hann er tilbúinn";
+        String diet = "prófæði";
 
 
         // Since we want our attributes regarding the user always in the same format,
@@ -53,22 +53,20 @@ public class HomeController {
         // Let's assume that the name, job and description always have
         // the first character in upper case
         name = stringService.convertsFirstCharInStringToUpperCase(name);
-        job = stringService.convertsFirstCharInStringToUpperCase(job);
-        description = stringService.convertsFirstCharInStringToUpperCase(description);
-
-        // Let's assume that we always want e-mail in lower case
-        email = stringService.convertStringToLowerCase(email);
+        meal = stringService.convertsFirstCharInStringToUpperCase(meal);
+        recipe = stringService.convertsFirstCharInStringToUpperCase(recipe);
+        diet = stringService.convertsFirstCharInStringToUpperCase(diet);
 
 
         // Now let's add the attributes to the model
         model.addAttribute("name",name);
-        model.addAttribute("job",job);
-        model.addAttribute("email",email);
-        model.addAttribute("description",description);
+        model.addAttribute("meal",meal);
+        model.addAttribute("recipe",recipe);
+        model.addAttribute("diet",diet);
 
         // By adding attributes to the model, we can pass information from the controller
         // to the view (the .jsp file).
         // Look at the User.jsp file in /main/webapp/WEB-INF/jsp/ to see how the data is accessed
-        return "User";
+        return "Food";
     }
 }

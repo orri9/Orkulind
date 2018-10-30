@@ -15,6 +15,7 @@
 	<li> <a href="\createSession"> Create training session</a> </li>
 	<li> <a href="\createExercise"> Create a exercise</a> </li>
 	<li> <a href="\"> Home </a> </li>
+	<li> <a href="\food"> Food programs </a> </li>
 </ul>
 </body>
 </html>
