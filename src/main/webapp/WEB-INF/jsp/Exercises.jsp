@@ -24,12 +24,32 @@
             <tr>
                 <td> Name:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="name" type="text" placeholder="Enter name"/></td>
+                <td><sf:input path="name" type="text" placeholder="Enter Name"/></td>
+            </tr>
+            <tr>
+                <td> Type:</td>
+                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+                <td><sf:input path="type" type="text" placeholder="Enter Type"/></td>
+            </tr>
+            <tr>
+                <td> Rep Type:</td>
+                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+                <td><sf:input path="repType" type="text" placeholder="Enter Rep Type"/></td>
+            </tr>
+            <tr>
+                <td> Reps:</td>
+                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+                <td><sf:input path="reps" type="text" placeholder="Enter Reps"/></td>
+            </tr>
+            <tr>
+                <td> Info:</td>
+                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+                <td><sf:textarea path="info" type="text" placeholder="Enter Info"/></td>
             </tr>
             
         </table>
 
-        <input type="submit" VALUE="Exercise"/>
+        <input type="submit" VALUE="Create Exercise"/>
 
     </sf:form>
 
