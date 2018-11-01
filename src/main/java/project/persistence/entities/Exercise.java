@@ -1,5 +1,8 @@
 package project.persistence.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 
 /**
@@ -12,27 +15,31 @@ import javax.persistence.*;
 public class Exercise {
 
     // Declare that this attribute is the id
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String type;
     private int reps;
     private String repType;
     private String info;
+    
+    @ManyToMany(mappedBy = "exercises")
+    private Set<Session> sessions;
 
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
     // to our model so we can use it with our form
     public Exercise() {
     }
 
-    public Exercise(int id, String name, String type, int reps, String repType, String info, String note) {
+    public Exercise(int id, String name, String type, int reps, String repType, String info, Set<Session> sessions) {
     		this.id = id;
     		this.name = name;
         this.type = type;
         this.reps = reps;
         this.repType = repType;
         this.info = info;
+        this.sessions = sessions;
     }
     
     
@@ -41,8 +48,13 @@ public class Exercise {
     @Override
     public String toString() {
         return String.format(
-                "Postit Note[name=%s, note=%s]",
+                "Exercise[id=%s, name=%s]",
                 id, name);
+    }
+    
+    public void addSession(Session session) {
+    		if (sessions == null) sessions = new HashSet<Session>(){{ add(session);}};
+		this.sessions.add(session);
     }
 
 	public int getId() {
@@ -91,5 +103,13 @@ public class Exercise {
 
 	public void setInfo(String info) {
 		this.info = info;
+	}
+
+	public Set<Session> getSessions() {
+		return sessions;
+	}
+
+	public void setSessions(Set<Session> sessions) {
+		this.sessions = sessions;
 	}
 }
