@@ -13,7 +13,7 @@
     <h1>Food Page</h1>
     <p>Some food information</p>
 
-    <table border="1px gray">
+    <table border="1px black">
         <thead>
             <tr style="font-weight: 600;">
                 <td>Name</td>
@@ -22,6 +22,7 @@
                 <td>Diet</td>
             </tr>
         </thead>
+
         <tbody>
             <tr>
                 <td>${name}</td>
@@ -31,7 +32,6 @@
             </tr>
         </tbody>
     </table>
-
 
     </body>
 

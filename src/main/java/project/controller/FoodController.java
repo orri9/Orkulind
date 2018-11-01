@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import project.service.StringManipulationService;
-
 @Controller
 public class FoodController {
 
@@ -46,7 +45,6 @@ public class FoodController {
         String recipe = "Settu kjúklinginn í ofn þangað til hann er tilbúinn";
         String diet = "prófæði";
 
-
         // Since we want our attributes regarding the user always in the same format,
         // we are going to convert some strings using our StringManipulationService
 
@@ -63,7 +61,7 @@ public class FoodController {
         model.addAttribute("meal",meal);
         model.addAttribute("recipe",recipe);
         model.addAttribute("diet",diet);
-
+        
         // By adding attributes to the model, we can pass information from the controller
         // to the view (the .jsp file).
         // Look at the User.jsp file in /main/webapp/WEB-INF/jsp/ to see how the data is accessed
