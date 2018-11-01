@@ -16,7 +16,7 @@ public class TrainController  {
 
     // Notice here that since the class has "/demo", this path is "/demo/page"
     @RequestMapping("/train")
-    public String demoPage(){
+    public String trainGetView(){
         return "Train"; // this returns a .jsp file with the path /webapp/WEB-INF/jsp/demo/demo.jsp
     }
 
