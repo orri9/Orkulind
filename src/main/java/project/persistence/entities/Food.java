@@ -3,7 +3,7 @@ package project.persistence.entities;
 import javax.persistence.*;
 
 /**
- * The class for the Postit Note itself.
+ * The class for the Food Note itself.
  * The system generates a table schema based on this class for this entity.
  * Be sure to annotate any entities you have with the @Entity annotation.
  */
