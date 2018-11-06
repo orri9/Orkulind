@@ -17,6 +17,7 @@
     <ul>
     	<li><a href="/personal">Personal training page</a> </li>
         <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
+        <li><a href="/createUser">Create User</a> </li>
     </ul>
     </body>
     <footer>Class HBV501G, University of Iceland</footer>
