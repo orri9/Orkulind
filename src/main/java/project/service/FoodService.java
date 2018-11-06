@@ -31,12 +31,6 @@ public interface FoodService {
      */
     List<Food> findAllReverseOrder();
     
-    /**
-     * Find a {@link Food} based on {@link Long id}
-     * @param id {@link Long}
-     * @return A {@link Food} with {@link Long id}
-     */
-    Food findOne(Long id);
 
     /**
      * Find all {@link Food}s with {@link String name}
@@ -44,5 +38,7 @@ public interface FoodService {
      * @return All {@link Food}s with the {@link String name} passed
      */
     List<Food> findByName(String name);
+    
+    Food storeFood(Food food);
 
 }

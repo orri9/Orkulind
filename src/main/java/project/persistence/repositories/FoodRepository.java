@@ -21,20 +21,5 @@ public interface FoodRepository extends JpaRepository<Food, Long> {
 
     List<Food> findAll();
 
-    // If we need a custom query that maybe doesn't fit the naming convention used by the JPA repository,
-    // then we can write it quite easily with the @Query notation, like you see below.
-    // This method returns all PostitNotes where the length of the name is equal or greater than 3 characters.
-    @Query(value = "SELECT p FROM Food p where length(p.name) >= 3 ")
-    List<Food> findAllWithNameLongerThan3Chars();
-
-    // Instead of the method findAllReverseOrder() in PostitNoteService.java,
-    // We could have used this method by adding the words
-    // ByOrderByIdDesc, which mean: Order By Id in a Descending order
-    //
-    List<Food> findAllByOrderByIdDesc();
-
-    @Query(value = "SELECT p FROM PostitNote p WHERE p.id = ?1")
-    Food findOne(Long id);
-
     List<Food> findByName(String name);
 }

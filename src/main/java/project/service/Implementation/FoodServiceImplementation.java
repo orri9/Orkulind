@@ -47,13 +47,13 @@ public class FoodServiceImplementation implements FoodService {
         return food;
     }
 
-    @Override 
-    public Food findOne(Long id) {
-        return repository.findOne(id);
-    }
-
     @Override
     public List<Food> findByName(String name) {
         return repository.findByName(name);
     }
+
+	@Override
+	public Food storeFood(Food food) {
+		return this.repository.save(food);
+	}
 }
