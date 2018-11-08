@@ -16,10 +16,8 @@ import java.util.List;
 @Service
 public class ExerciseServiceImplementation implements ExerciseService {
 
-    // Instance Variables
     ExerciseRepository repository;
 
-    // Dependency Injection
     @Autowired
     public ExerciseServiceImplementation(ExerciseRepository repository) {
         this.repository = repository;
@@ -42,10 +40,8 @@ public class ExerciseServiceImplementation implements ExerciseService {
 
     @Override
     public List<Exercise> findAllExercisesReverseOrder() {
-        // Get all the Postit notes
         List<Exercise> exercises = repository.findAll();
 
-        // Reverse the list
         Collections.reverse(exercises);
 
         return exercises;

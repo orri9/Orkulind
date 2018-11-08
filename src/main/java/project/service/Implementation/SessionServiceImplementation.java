@@ -16,10 +16,8 @@ import java.util.Set;
 @Service
 public class SessionServiceImplementation implements SessionService {
 
-    // Instance Variables
     SessionRepository repository;
 
-    // Dependency Injection
     @Autowired
     public SessionServiceImplementation(SessionRepository repository) {
         this.repository = repository;
@@ -27,9 +25,6 @@ public class SessionServiceImplementation implements SessionService {
 
     @Override
     public Session save(Session session) {
-    		//prufa
-    		//session.addExercise(new Exercise());
-    		//
         return repository.save(session);
     }
 
@@ -45,10 +40,9 @@ public class SessionServiceImplementation implements SessionService {
 
     @Override
     public List<Session> findAllSessionsReverseOrder() {
-        // Get all the Postit notes
+
         List<Session> sessions = repository.findAll();
 
-        // Reverse the list
         Collections.reverse(sessions);
 
         return sessions;

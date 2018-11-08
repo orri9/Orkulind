@@ -5,51 +5,36 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-/**
- * The class for the Postit Note itself.
- * The system generates a table schema based on this class for this entity.
- * Be sure to annotate any entities you have with the @Entity annotation.
- */
 @Entity
-@Table(name = "Exercise") // If you want to specify a table name, you can do so here
+@Table(name = "Exercise")
 public class Exercise {
 
-    // Declare that this attribute is the id
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+	
     private String name;
     private String type;
     private int reps;
     private String repType;
     private String info;
+    private int userID;
     
     @ManyToMany(mappedBy = "exercises")
     private Set<Session> sessions;
 
-    // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
-    // to our model so we can use it with our form
     public Exercise() {
     }
 
-    public Exercise(int id, String name, String type, int reps, String repType, String info, Set<Session> sessions) {
+    public Exercise(int id, String name, String type, int reps, String repType, String info, int userID, Set<Session> sessions) {
     		this.id = id;
     		this.name = name;
         this.type = type;
         this.reps = reps;
         this.repType = repType;
         this.info = info;
+        this.userID = userID;
         this.sessions = sessions;
-    }
-    
-    
-
-    // This is for easier debug.
-    @Override
-    public String toString() {
-        return String.format(
-                "Exercise[id=%s, name=%s]",
-                id, name);
     }
     
     public void addSession(Session session) {
@@ -112,4 +97,19 @@ public class Exercise {
 	public void setSessions(Set<Session> sessions) {
 		this.sessions = sessions;
 	}
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+	
+	@Override
+    public String toString() {
+        return String.format(
+                "%s",
+                id);
+    }
 }

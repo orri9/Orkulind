@@ -1,59 +1,37 @@
 package project.persistence.entities;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
 
-/**
- * The class for the Postit Note itself.
- * The system generates a table schema based on this class for this entity.
- * Be sure to annotate any entities you have with the @Entity annotation.
- */
+
 @Entity
-@Table(name = "Session") // If you want to specify a table name, you can do so here
+@Table(name = "Session")
 public class Session {
 
-    // Declare that this attribute is the id
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
+    
+	private String name;
     private String type;
+    private int userID;
     
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable
     private Set<Exercise> exercises;
 
-    // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
-    // to our model so we can use it with our form
     public Session() {
     }
 
-    public Session(int id, String name, String type, Set<Exercise> exercises) {
+    public Session(int id, String name, String type, int userID, Set<Exercise> exercises) {
     		this.id = id;
     		this.name = name;
         this.type = type;
+        this.userID = userID;
         this.exercises = exercises;
-    }
-    
-    
-
-    // This is for easier debug.
-    @Override
-    public String toString() {
-        String result = String.format(
-                "Session [id=%d, name='%s']%n",
-                id, name);
-        if (exercises != null) {
-            for(Exercise exercise : exercises) {
-                result += String.format(
-                        "Exercise[id=%d, name='%s']%n",
-                        exercise.getId(), exercise.getName());
-            }
-        }
-
-        return result;
     }
     
     public void addExercise(Exercise exercise) {
@@ -94,5 +72,29 @@ public class Session {
 		this.exercises = exercises;
 	}
 
+	public int getUserID() {
+		return userID;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+	
+	// This is for easier debug.
+    @Override
+    public String toString() {
+        String result = String.format(
+                "Session [id=%d, name='%s']%n",
+                id, name);
+        if (exercises != null) {
+            for(Exercise exercise : exercises) {
+                result += String.format(
+                        "Exercise[id=%d, name='%s']%n",
+                        exercise.getId(), exercise.getName());
+            }
+        }
+
+        return result;
+    }
 
 }

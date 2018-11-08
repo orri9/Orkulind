@@ -3,11 +3,12 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <html lang="en">
 
     <head>
-        <title>Exercises</title>
+        <title>Session</title>
 
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
     </head>
@@ -32,12 +33,19 @@
                 <td><sf:input path="type" type="text" placeholder="Enter Type"/></td>
             </tr>
             
+            <tr>
+            		<td>Æfing:</td>
+            		<td>
+            			<form:select items="${allExercises}" multiple="true" path="exercises" itemLabel = "name" style="width: 300px"/>
+            			
+				</td>
+            </tr>
+            
         </table>
 
-        <input type="submit" VALUE="Create Exercise"/>
+        <input type="submit" VALUE="Create Session"/>
 
     </sf:form>
-
   
 
     </body>
