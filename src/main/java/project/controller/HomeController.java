@@ -28,8 +28,10 @@ public class HomeController {
 	@RequestMapping(value = "/log", method = RequestMethod.POST)
 	public String exerciseViewPost(@ModelAttribute("user") User user,
 	                                 Model model){
+		
 		User.logedUser = user;
-		model.addAttribute("logedUser", "User: " + User.logedUser.getName());
+		User.logedUser.setId(1);
+		model.addAttribute("logedUser", "User: " + User.logedUser.getName() + " , id: " + User.logedUser.getId() );
 	    return "personalPage";
 	}
     
