@@ -22,16 +22,20 @@ public class Session {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable
     private Set<Exercise> exercises;
+    
+    @OneToMany(mappedBy="session")
+    private Set<Training> trainings;
 
     public Session() {
     }
 
-    public Session(int id, String name, String type, int userID, Set<Exercise> exercises) {
+    public Session(int id, String name, String type, int userID, Set<Training> trainings, Set<Exercise> exercises) {
     		this.id = id;
     		this.name = name;
         this.type = type;
         this.userID = userID;
         this.exercises = exercises;
+        this.trainings = trainings;
     }
     
     public void addExercise(Exercise exercise) {
@@ -96,5 +100,13 @@ public class Session {
 
         return result;
     }
+    
+	public Set<Training> getTrainings() {
+		return trainings;
+	}
+
+	public void setTrainings(Set<Training> trainings) {
+		this.trainings = trainings;
+	}
 
 }
