@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Personal Training Page</h1>
-
+<p>${logedUser}</p>
 <ul>
 	<li> <a href="\train">Train</a> </li>
 	<li> <a href="\createSession"> Create training session</a> </li>

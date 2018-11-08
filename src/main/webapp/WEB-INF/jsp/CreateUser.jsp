@@ -14,7 +14,8 @@
 	<h1>Create User</h1>
 	<a href="/"> Heim</a>
 	<sf:form method="POST" modelAttribute="storeUser" action="/storeUser">
-	
+	<p>${villa}</p>
+	<p>${creatUser}</p>
 	<table>
             <tr>
                 <td> Name:</td>
@@ -24,7 +25,7 @@
             <tr>
                 <td> password:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="password" type="text" placeholder="Enter Type"/></td>
+                <td><sf:input path="password" type="password" placeholder="Enter Type"/></td>
             </tr>
         </table>
 

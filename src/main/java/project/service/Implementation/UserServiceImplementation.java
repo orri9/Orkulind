@@ -20,9 +20,39 @@ public class UserServiceImplementation implements UserService {
     public UserServiceImplementation(UserRepository repository) {
         this.repository = repository;
     }
+	
     
 	public User storeUser(User user) {
-		return this.repository.save(user);
+		if(existUser(user) == null) {
+			return this.repository.save(user);			
+		}
+		else {
+			return null;
+		}
+	}
+
+	@Override
+	public boolean validateName(User user) {
+		// TODO Auto-generated method stub
+		
+		return false;
+	}
+
+	@Override
+	public boolean validatePassword(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public User existUser(User user) {
+		List<User> users = this.repository.findAll();
+		for (User use : users) {
+	        if (use.getName().equals(user.getName())) {
+	            return use;
+	        }
+	    }
+		return null;
 	}
     
 }

@@ -43,9 +43,32 @@ public class CreateUserController  {
     @RequestMapping(value = "/storeUser", method = RequestMethod.POST)
     public String createUserViewPost(@ModelAttribute("storeUser") User user,
                                      Model model){
+    	
+    	System.out.println(user.getPassword().trim());
+    	if(user.getPassword().matches(".*\\s+.*")) {
+    		model.addAttribute("villa", "Password cant include whitespace");
+    		return "CreateUser";
+    	}
+    	
+    	if(user.getPassword().length() == 0) {
+    		model.addAttribute("villa", "Password must have length larger then zero");
+    		return "CreateUser";
+    	}
+    	if(user.getName().length() == 0) {
+    		model.addAttribute("villa", "Name must have length larger then zero");
+    		return "CreateUser";
+    	}
+    	if(userService.storeUser(user) == null) {
+        	if(user.getName().matches(".*\\s+.*")) {
+        		model.addAttribute("villa", "Name cant include whitespace");
+        		return "CreateUser";
+        	}
+        	model.addAttribute("villa", "User already exist");
+        	return "CreateUser";
+        }
+        
+    	model.addAttribute("creatUser", "New user has bin created");
 
-        model.addAttribute("storeUser", new User());
-        userService.storeUser(user);
         return "CreateUser";
     }
 

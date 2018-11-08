@@ -25,12 +25,6 @@ public class FoodController {
         return "Food";
     }
     
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String food(){
-        
-        return "Index";
-    }
-    
     @RequestMapping(value = "/food", method = RequestMethod.POST)
     public String foodViewPost(@ModelAttribute("food") Food food,
     							Model model) {
