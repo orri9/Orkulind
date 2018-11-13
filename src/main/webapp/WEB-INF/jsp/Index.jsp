@@ -21,7 +21,7 @@
         <li><a href="/createUser">Create User</a> </li>
     </ul>
     
-    
+    <p>${villa}</p>
     <sf:form method="POST" modelAttribute="user" action="/log">
 	<table>
             <tr>
