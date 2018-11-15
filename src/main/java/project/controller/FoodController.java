@@ -21,7 +21,7 @@ public class FoodController {
     }
     
     
-    @RequestMapping(value = "/Foods", method = RequestMethod.GET)
+    @RequestMapping(value = "/food", method = RequestMethod.GET)
     public String foodViewGet(Model model){
 
         model.addAttribute("Food",new Food());
