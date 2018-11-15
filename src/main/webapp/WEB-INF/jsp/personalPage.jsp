@@ -5,6 +5,7 @@
 
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
 		<title>Insert title here</title>
@@ -24,4 +25,5 @@
 			<li> <a href="\food"> Food programs </a> </li>
 		</ul>
 	</body>
+
 </html>
