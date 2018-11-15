@@ -11,8 +11,11 @@
         <title>Project Title</title>
     </head>
     <body>
-
-    <h1 class="head">Orkulind</h1>
+	
+	<div class="headBox">
+	    <%@include file="headerAndFooder/header.jsp" %>
+	</div>
+    
     <p>Í vinnslu</p>
 
     <ul>
@@ -41,5 +44,6 @@
     </sf:form>
        
     </body>
+    <%@include file="headerAndFooder/footer.jsp" %>
     <footer>Class HBV501G, University of Iceland</footer>
 </html>
