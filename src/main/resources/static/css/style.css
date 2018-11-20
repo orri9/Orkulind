@@ -1,3 +1,16 @@
+img {
+	width:  100%;
+	height: 100%;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    background-color: transparent;
+}
 
 body {
     background-color: lightblue;
@@ -10,4 +23,25 @@ body {
 	display:flex;
 	justify-content: space-around;
 	width: 100%;
+}
+
+.box {
+	width: 30%;
+	height: 30%;
+	text-align: center;
+}
+
+.container {
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-around;
+	justify-content: space-around;
+}
+
+.body {
+	height: 500px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
