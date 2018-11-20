@@ -3,13 +3,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <html lang="en">
 
     <head>
-        <title>Food Programs</title>
+        <title>Diet Programs</title>
 
-        <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
         
         <style>
             table {
@@ -19,7 +20,7 @@
             }
 
             td, th {
-                border: 1px solid #dddddd;
+                border: 1px solid #999999;
                 text-align: middle;
                 padding: 12px;
             }
@@ -31,7 +32,7 @@
     </head>
     <body>
 
-    <h1><a href="/food">Food Programs</a></h1>
+    <h1><a href="/food">Diet Programs</a></h1>
 
             <tr>
    <c:choose>
@@ -41,7 +42,7 @@
                     <th>${"Name"}</th>
                     <th>${"Meal"}</th>
                     <th>${"Diet"}</th>
-                    <th>${"recipe"}</th>    
+                    <th>${"Main Focus Of Diet"}</th>    
                 </tr>
                 
                 <tr>
@@ -128,7 +129,7 @@
         </c:otherwise>
     </c:choose>             
     <br />
-    <h2>Make Your Own Food Program:</h2>   
+    <h2>Make Your Own Diet Program:</h2>   
             </tr>
     <sf:form method="POST" modelAttribute="Food" action="/postfood">
 
@@ -142,8 +143,8 @@
                 <td><sf:input path="meal" type="text" placeholder="Enter Meal Type"/></td>
             </tr>
             <tr>
-                <td> Recipe:</td>
-                <td><sf:input path="recipe" type="text" placeholder="Enter Recipe"/></td>
+                <td> Main Focus Of Diet:</td>
+                <td><sf:input path="recipe" type="text" placeholder="Enter Main Focus Of Diet"/></td>
             </tr>
             <tr>
                 <td> Diet Type:</td>
@@ -152,8 +153,12 @@
             
         </table>
 
-        <input type="submit" VALUE="Create Food Program"/>
+        <input type="submit" VALUE="Create Diet Program"/>
 
     </sf:form>
+
+    <%-- This is for the user to enter what he ate --%>
+ 
     </body>
+
 </html>
