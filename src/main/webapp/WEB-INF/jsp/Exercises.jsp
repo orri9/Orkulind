@@ -18,7 +18,7 @@
     <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
     <%--that is added to the model that is passed to the view.--%>
     <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
-    <sf:form method="POST" modelAttribute="exercise" action="/ex">
+    <sf:form method="POST" modelAttribute="exercise" action="/exercises">
 
         <table>
             <tr>

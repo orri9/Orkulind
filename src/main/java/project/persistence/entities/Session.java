@@ -87,7 +87,7 @@ public class Session {
 	// This is for easier debug.
     @Override
     public String toString() {
-        String result = String.format(
+        /*String result = String.format(
                 "Session [id=%d, name='%s']%n",
                 id, name);
         if (exercises != null) {
@@ -96,9 +96,11 @@ public class Session {
                         "Exercise[id=%d, name='%s']%n",
                         exercise.getId(), exercise.getName());
             }
-        }
+        }*/
 
-        return result;
+        return String.format(
+                "%s",
+                id);
     }
     
 	public Set<Training> getTrainings() {

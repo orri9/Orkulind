@@ -19,7 +19,7 @@
     <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
     <%--that is added to the model that is passed to the view.--%>
     <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
-    <sf:form method="POST" modelAttribute="session" action="/ses">
+    <sf:form method="POST" modelAttribute="session" action="/sessions">
 
         <table>
             <tr>
@@ -34,7 +34,7 @@
             </tr>
             
             <tr>
-            		<td>Æfing:</td>
+            		<td>Exercises:</td>
             		<td>
             			<form:select items="${allExercises}" multiple="true" path="exercises" itemLabel = "name" style="width: 300px"/>
             			
@@ -49,4 +49,24 @@
   
 
     </body>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    		$('option').mousedown(function(e) {
+      		e.preventDefault();
+        	    var originalScrollTop = $(this).parent().scrollTop();
+        	    $(this).prop('selected', $(this).prop('selected') ? false : true);
+        	    var self = this;
+        	    $(this).parent().focus();
+        	    setTimeout(function() {
+        	        $(self).parent().scrollTop(originalScrollTop);
+        	    }, 0);
+        	    
+        	    return false;
+    		});
+  	</script>
+    
+    
 </html>
+
+

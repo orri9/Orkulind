@@ -15,6 +15,32 @@
 <body>
 	<h1>Train</h1>
 	
-	<form:select items="${allSessions}" multiple="true" path="allSessions" style="width: 1000px"/>
+	<sf:form method="POST" modelAttribute="training" action="/train">
+
+        <table>
+            <tr>
+            		<td>Session:</td>
+            		<td>
+            			<form:select items="${allSessions}" onchange="this.form.submit()" itemLabel = "name" multiple="false" path="session" style="width: 1000px"/>	
+				</td>
+            </tr>
+            
+        </table>
+
+    </sf:form>
+    <sf:form method="POST" modelAttribute="training" action="/finishTraining">
+    		<table class="exercises">
+    			<c:forEach var="exercise" items="${training.session.exercises}" varStatus="vs">
+        			<tr>
+               	 	<td>${exercise.name}</td>
+               	 	<td>
+                		<sf:input path="session.exercises[${vs.index}].reps" type="text" placeholder="Enter Reps"/>
+               	 	</td>
+         		</tr>
+       		</c:forEach>
+   		</table>
+   		
+   		<input type="submit" VALUE="Finish"/>
+   	</sf:form>
 </body>
 </html>

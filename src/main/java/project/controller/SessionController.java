@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.Server;
 import org.hibernate.mapping.Set;
@@ -44,7 +45,7 @@ public class SessionController {
         return "Sessions";
     }
 
-    @RequestMapping(value = "/ses", method = RequestMethod.POST)
+    @RequestMapping(value = "/sessions", method = RequestMethod.POST)
     public String sessionViewPost(@ModelAttribute("session") Session session,
                                      Model model){
     		

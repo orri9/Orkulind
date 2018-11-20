@@ -31,7 +31,7 @@ public class ExerciseController {
         return "Exercises";
     }
 
-    @RequestMapping(value = "/ex", method = RequestMethod.POST)
+    @RequestMapping(value = "/exercises", method = RequestMethod.POST)
     public String exerciseViewPost(@ModelAttribute("exercise") Exercise exercise,
                                      Model model){
 
