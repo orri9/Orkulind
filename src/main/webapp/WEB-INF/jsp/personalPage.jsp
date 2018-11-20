@@ -54,13 +54,6 @@
 		
 		</div>
 		
-		<ul>
-			<li> <a href="\train">Train</a> </li>
-			<li> <a href="\sessions"> Create training session</a> </li>
-			<li> <a href="\exercises"> Create a exercise</a> </li>
-			<li> <a href="\"> Home </a> </li>
-			<li> <a href="\food"> Food programs </a> </li>
-		</ul>
 	</body>
 
 </html>

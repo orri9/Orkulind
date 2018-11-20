@@ -13,7 +13,7 @@ a:visited {
 }
 
 body {
-    background-color: lightblue;
+    background-color: #FEF2C9;
 }
 
 .head {
@@ -40,8 +40,36 @@ body {
 }
 
 .body {
-	height: 500px;
+	height: auto;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+}
+
+.textBox {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.text {
+	width: 90%;
+	text-align: center;
+}
+
+
+.homePage {
+	flex-direction: column;
+}
+
+.loginBox {
+	widh: 70%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+}
+
+.footer {
+	width: 100%;
 }
