@@ -3,6 +3,7 @@
 package project.controller;
 
 import java.beans.PropertyEditorSupport;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +24,7 @@ import project.persistence.entities.Exercise;
 import project.persistence.entities.PostitNote;
 import project.persistence.entities.Session;
 import project.persistence.entities.Training;
+import project.persistence.entities.TrainingList;
 import project.service.ExerciseService;
 import project.service.SessionService;
 import project.service.TrainService;
@@ -33,7 +35,7 @@ import project.service.TrainService;
  */
 @Controller
 @RequestMapping("/") // Notice here that the Request Mapping is set at the Class level
-@SessionAttributes("training")
+@SessionAttributes({"training", "trainings"})
 public class TrainController  {
 
 	private TrainService trainService;
@@ -47,7 +49,7 @@ public class TrainController  {
   
 	@RequestMapping(value = "/train", method = RequestMethod.GET)
     public String trainGetView(Model model){
-    	
+
 		model.addAttribute("training",new Training());
 		
 
@@ -59,9 +61,19 @@ public class TrainController  {
 	public String trainViewPost(@ModelAttribute("training") Training training,
             Model model){
 		
+		
 		model.addAttribute("allSessions", sessionService.findAllSessions());
-	
-		model.addAttribute("training", training);
+		
+		TrainingList trainings = new TrainingList();
+		int i = 0;
+		for(Exercise e: training.getSession().getExercises()) {
+			trainings.add(new Training());
+			trainings.get(i).setExercise(e);
+			trainings.get(i).setSession(training.getSession());
+			i++;
+		}
+		
+		model.addAttribute("trainings", trainings);
 		
 		
 		// Return the view
@@ -69,16 +81,18 @@ public class TrainController  {
 	}
 	
 	@RequestMapping(value = "/finishTraining", method = RequestMethod.POST)
-	public String finishTrainingViewPost(@ModelAttribute("training") Training training,
+	public String finishTrainingViewPost(@ModelAttribute("trainings") TrainingList trainings,
             Model model){
 		
-		training.setDate(new Date());
-		sessionService.save(training.getSession());
-		trainService.save(training);
+		Date date = new Date();
+		for(Training training: trainings.getTrainingList()) {
+			training.setDate(date);
+			trainService.save(training);
+		}
 		
 		
 		// Return the view
-		return "personalPage";
+		return "redirect:/personal";
 	}
 	
 	@InitBinder     
@@ -91,6 +105,7 @@ public class TrainController  {
             }
         });  
     }
+	
 
 
 }
