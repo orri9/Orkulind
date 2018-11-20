@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
@@ -25,7 +28,7 @@
             }
 
             tr:nth-child(even) {
-                background-color: #dddddd;
+                background-color: #A1C8A0;
             }
         </style>
     </head>
@@ -57,7 +60,14 @@
 
         <%--If all tests are false, then do this--%>
         <c:otherwise>
-            <h3>No Food Programs!</h3>
+            <sql:setDataSource var = "snapshot" driver = "org.postgresql.Driver"
+            url = "jdbc:postgresql://localhost:5432/hbv"
+            user = "postgres"  password = "3103"/>
+            
+            <sql:update dataSource = "${snapshot}" var = "Foods">
+                INSERT INTO food (id, name, meal, recipe, diet)
+                VALUES(1,2,3,4,5);
+            </sql:update>
         </c:otherwise>
     </c:choose>             
     <br />
