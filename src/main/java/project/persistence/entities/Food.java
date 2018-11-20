@@ -14,8 +14,10 @@ public class Food {
     // Declare that this attribute is the id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    @Column(name = "id", unique = true)
+    	private Long id;
+    
+    @Column(length = 5000)
     private String name;
     private String meal;
     private String recipe;
