@@ -17,10 +17,10 @@ public class Food {
     @Column(name = "id", unique = true)
     	private Long id;
     
-    @Column(length = 5000)
     private String name;
     private String meal;
-    private String recipe;
+    @Column(name = "recipe", length = 5000)
+    	private String recipe;
     private String diet;
 
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
