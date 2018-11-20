@@ -73,3 +73,18 @@ body {
 .footer {
 	width: 100%;
 }
+
+.input {
+	display: flex;
+}
+
+.inputBox {
+	width: 50%;
+}
+
+.formBox {
+	
+}
+
+
+

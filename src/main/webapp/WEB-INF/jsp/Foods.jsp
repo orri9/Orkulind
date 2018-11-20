@@ -9,8 +9,7 @@
     <head>
         <title>Food Programs</title>
 
-        <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
-        
+        	<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
         <style>
             table {
                 font-family: arial, sans-serif;

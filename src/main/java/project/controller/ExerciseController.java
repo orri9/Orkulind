@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import project.persistence.entities.User;
 import project.persistence.entities.Exercise;
 import project.service.ExerciseService;
 
@@ -34,11 +34,13 @@ public class ExerciseController {
     @RequestMapping(value = "/exercises", method = RequestMethod.POST)
     public String exerciseViewPost(@ModelAttribute("exercise") Exercise exercise,
                                      Model model){
-
-        exerciseService.save(exercise);
+    	
+    	exercise.setUserID(User.logedUser.getId());
+    	
+    	exerciseService.save(exercise);
 
         model.addAttribute("exercises", exerciseService.findAllExercisesReverseOrder());
-
+ 
         model.addAttribute("exercise", new Exercise());
 
         return "Exercises";
