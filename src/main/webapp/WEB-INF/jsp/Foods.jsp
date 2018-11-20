@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
-<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
@@ -46,7 +43,74 @@
                     <th>${"Diet"}</th>
                     <th>${"recipe"}</th>    
                 </tr>
-
+                
+                <tr>
+                    <td><a href="https://www.medicalnewstoday.com/articles/7382.php">${"The Zone diet"}</a></td>
+                    <td>${"Protein/Fat/carbohydrates"}</td>
+                    <td>${"40 percent carbohydrates, 30 percent fats, and 30 percent protein"}</td>
+                    <td>${"The focus is also on controlling insulin levels, which may result in more successful 
+                        weight loss and body weight control than other approaches."}</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="https://www.medicalnewstoday.com/articles/7379.php">${"The Atkins diet"}</a></td>
+                    <td>${"Protein/Fat"}</td>
+                    <td>${"Low-carbohydrate"}</td>
+                    <td>${"The Atkins diet, or Atkins nutritional approach, focuses on controlling the levels of 
+                        insulin in the body through a low-carbohydrate diet."}</td>
+                </tr>
+            
+                <tr>
+                    <td><a href="https://www.medicalnewstoday.com/articles/149090.php">${"Mediterranean diet"}</a></td>
+                    <td>${"Plants ,fruits , beans, nuts, whole grains, seeds, olive oil"}</td>
+                    <td>${"30 percent fats"}</td>
+                    <td>${"The emphasis is on lots of plant foods, fresh fruits as dessert, beans, nuts, whole grains, 
+                        seeds, olive oil as the main source of dietary fats. Cheese and yogurts are the main dairy foods."}</td>
+                </tr>
+            
+                <tr>
+                    <td><a href="https://www.medicalnewstoday.com/articles/7381.php">${"Raw food diet"}</a></td>
+                    <td>${"Non processed food"}</td>
+                    <td>${"75 percent Non processed uncooked food"}</td>
+                    <td>${"The raw food diet, or raw foodism, involves consuming foods and drinks that are not processed, 
+                        are completely plant-based, and ideally organic. Raw foodists believe that at least three-quarters 
+                        of a person's food intake should consist of uncooked food."}</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="https://www.medicalnewstoday.com/articles/7380.php">${"South Beach diet"}</a></td>
+                    <td>${"carbohydrates"}</td>
+                    <td>${"unrefined slow carbohydrates"}</td>
+                    <td>${"It focuses on the control of insulin levels, and the benefits of unrefined slow 
+                        carbohydrates versus fast carbohydrates."}</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="https://www.medicalnewstoday.com/articles/149636.php">${"Vegan diet"}</a></td>
+                    <td>${"No animal-based foods"}</td>
+                    <td>${"Vegan"}</td>
+                    <td>${"A vegan does not eat anything that is animal-based, including eggs, dairy, and honey. 
+                        Vegans do not usually adopt veganism just for health reasons, but also for environmental, 
+                        ethical, and compassionate reasons."}</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="https://www.medicalnewstoday.com/articles/8749.php">${"Vegetarian diet"}</a></td>
+                    <td>${"No animal-based foods"}</td>
+                    <td>${"Vegan"}</td>
+                    <td>${"A vegan does not eat anything that is animal-based, including eggs, dairy, and honey. 
+                        Vegans do not usually adopt veganism just for health reasons, but also for environmental, 
+                        ethical, and compassionate reasons."}</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="https://www.medicalnewstoday.com/articles/180858.php">${"Ketogenic diet"}</a></td>
+                    <td>${"Fat"}</td>
+                    <td>${"Healthy fats, Low-carbohydrate"}</td>
+                    <td>${"The diet causes the break down of fat deposits for fuel and creates substances called 
+                        ketones through a process called ketosis."}</td>
+                </tr>
+                
                 <c:forEach var="postfood" items="${Foods}">
                     <tr>
                         <td><a href="https://www.medicalnewstoday.com/articles/5847.php">${postfood.name}</a></td>
@@ -60,14 +124,7 @@
 
         <%--If all tests are false, then do this--%>
         <c:otherwise>
-            <sql:setDataSource var = "snapshot" driver = "org.postgresql.Driver"
-            url = "jdbc:postgresql://localhost:5432/hbv"
-            user = "postgres"  password = "3103"/>
-            
-            <sql:update dataSource = "${snapshot}" var = "Foods">
-                INSERT INTO food (id, name, meal, recipe, diet)
-                VALUES(1,2,3,4,5);
-            </sql:update>
+
         </c:otherwise>
     </c:choose>             
     <br />
