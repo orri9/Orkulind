@@ -41,9 +41,12 @@ public class FoodController {
 
          return "Foods";
     }
-  
+    
+
+    
+    
     @RequestMapping(value = "/postfood", method = RequestMethod.POST)
-    public String foodViewPost(@ModelAttribute("Food") Food food,
+    public String foodViewPost(@ModelAttribute("food") Food food,
     							Model model) {
     	foodService.save(food);
 
