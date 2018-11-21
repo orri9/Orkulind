@@ -58,7 +58,6 @@
 			    
     	
 	</div>
-	<%@include file="headerAndFooder/footer.jsp" %>
     </body>
     
 </html>

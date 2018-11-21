@@ -13,8 +13,7 @@
     <body>
 
 		<div class="headBox">
-			<%@include file="headerAndFooder/header.jsp" %>
-			<h1>Exercises</h1>
+			<h1>Create Exercises</h1>
 		</div>
 		
     <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
@@ -25,18 +24,18 @@
 			
 			<div class="input">
 				<div class="inputBox">
-					<p>Name:</p>
+					<p>Exercise name:</p>
 					<sf:input path="name" type="text" placeholder="Enter Name"/>
 				</div>
-				<p class="inputBox"> asdfasdfasdf safasfasdsad fsadfsdafsd afsadfdas ffsadfsadsda ffasds ads dfs</p>
+				<p class="text inputBox">Here you can add the exercise name. Here is a <a href="http://travelstrong.net/bodyweight-exercises/">list of exercises</a></p>
 			</div>
 			
 			<div class="input">
 				<div class="inputBox">
-					<p>Type:</p>
+					<p>Targeted area to train:</p>
 					<sf:input path="type" type="text" placeholder="Enter Type"/>
 				</div>
-				<p class="inputBox">Hér er texti</p>
+				<p class="text inputBox">Here you can write what area your exercise is targeting.</p>
 			</div>
 			
 			<div class="input">
@@ -44,7 +43,7 @@
 					<p>Rep Type:</p>
 		        	<sf:input path="repType" type="text" placeholder="Enter Rep Type"/>
 				</div>
-				<p class="inputBox">Hér er texti</p>
+				<p class="text inputBox">Here you can write what your rep is based on time or reps.</p>
 			</div>
 			
 			<div class="input">
@@ -52,7 +51,7 @@
 					<p>Reps:</p>
 			        <sf:input path="reps" type="text" placeholder="Enter Reps"/>
 				</div>
-				<p class="inputBox"> Hér er texti </p>
+				<p class="text inputBox">How many reps you want to do in your exercise</p>
 			</div>
 			
 			<div class="input">
@@ -60,7 +59,7 @@
 					<p>Info:</p>
 			        <sf:textarea path="info" type="text" placeholder="Enter Info"/>
 				</div>
-				<p class="inputBox"> Hér er texti </p>
+				<p class="text inputBox"> Some info about exercise </p>
 			</div>
 			
 			<div>

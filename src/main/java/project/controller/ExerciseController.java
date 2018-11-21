@@ -26,7 +26,7 @@ public class ExerciseController {
 
         model.addAttribute("exercise",new Exercise());
 
-         model.addAttribute("exercises", exerciseService.findAllExercisesReverseOrder());
+        model.addAttribute("exercises", exerciseService.findAllExercisesReverseOrder());
 
         return "Exercises";
     }
