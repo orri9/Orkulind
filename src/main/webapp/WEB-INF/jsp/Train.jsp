@@ -21,7 +21,7 @@
             <tr>
             		<td>Session:</td>
             		<td>
-            			<form:select items="${allSessions}" onchange="this.form.submit()" itemLabel = "name" multiple="false" path="session" style="width: 1000px"/>	
+            			<form:select items="${allSessions}" onchange="this.form.submit()" itemLabel = "name" multiple="false" path="session" style="width: 1000px"/>
 				</td>
             </tr>
             

@@ -21,4 +21,6 @@ public interface SessionService {
 
     List<Session> findSessionByType(String type);
 
+	List<Session> findAllUserSessions(int i);
+
 }

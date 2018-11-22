@@ -25,5 +25,8 @@ public interface SessionRepository extends JpaRepository<Session, Long> {
     
     @Query(value = "SELECT p FROM Session p WHERE p.type = ?1")
     List<Session> findSessionByType(String type);
+
+    @Query(value = "SELECT p FROM Session p WHERE p.userID = ?1 OR p.userID = 0")
+	List<Session> findAllUserSessions(int id);
     
 }

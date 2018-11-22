@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import project.persistence.entities.Exercise;
 import project.persistence.entities.Session;
+import project.persistence.entities.User;
 import project.service.ExerciseService;
 import project.service.SessionService;
 
@@ -39,8 +40,10 @@ public class SessionController {
     public String createSessionViewGet(Model model){
 
         model.addAttribute("session",new Session());
+        
+        List<Exercise> exercises = exerciseService.findAllUserExercises(User.logedUser.getId());
 
-        model.addAttribute("allExercises", exerciseService.findAllExercises());
+        model.addAttribute("allExercises", exercises);
 
         return "Sessions";
     }
@@ -49,9 +52,11 @@ public class SessionController {
     public String sessionViewPost(@ModelAttribute("session") Session session,
                                      Model model){
     		
+    		session.setUserID(User.logedUser.getId());
         sessionService.save(session);
         
-        model.addAttribute("allExercises", exerciseService.findAllExercises());
+        List<Exercise> exercises = exerciseService.findAllUserExercises(User.logedUser.getId());
+        model.addAttribute("allExercises", exercises);
 
         model.addAttribute("session", new Session());
 
