@@ -22,7 +22,8 @@ public class Exercise {
     
     @ManyToMany(mappedBy = "exercises")
     private Set<Session> sessions;
-    @OneToMany(mappedBy="exercise", fetch = FetchType.EAGER)
+    
+    @OneToMany(mappedBy="exercise", cascade = CascadeType.REMOVE)
     private Set<Training> trainings;
 
     public Exercise() {
@@ -42,6 +43,13 @@ public class Exercise {
     public void addSession(Session session) {
     		if (sessions == null) sessions = new HashSet<Session>(){{ add(session);}};
 		this.sessions.add(session);
+    }
+    
+    @PreRemove
+    public void removeExerciseFromSessions() {
+        for (Session s : sessions) {
+            s.getExercises().remove(this);
+        }
     }
 
 	public int getId() {

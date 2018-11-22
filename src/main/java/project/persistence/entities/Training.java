@@ -5,6 +5,9 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 
 @Entity
 @Table(name = "Training")
@@ -14,14 +17,16 @@ public class Training {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne
     @JoinColumn(name="session_id", nullable=false)
 	private Session session;
+	
 	private Date date;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne
     @JoinColumn(name="exercise_id", nullable=false)
 	private Exercise exercise;
+	
 	private int reps;
 
 	

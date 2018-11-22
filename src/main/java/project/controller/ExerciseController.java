@@ -38,6 +38,8 @@ public class ExerciseController {
     public String sessionRemoveViewPost(@ModelAttribute("exercise") Exercise exercise,
                                      Model model){
     		
+    		exercise = exerciseService.findExercise(exercise.getId());
+    		exercise.removeExerciseFromSessions();
         exerciseService.delete(exercise);
 
         return "redirect:/exercises";

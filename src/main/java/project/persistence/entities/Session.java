@@ -21,7 +21,8 @@ public class Session {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable
     private Set<Exercise> exercises;
-    @OneToMany(mappedBy="session", fetch = FetchType.EAGER)
+    
+    @OneToMany(mappedBy="session", cascade = CascadeType.REMOVE)
     private Set<Training> trainings;
 
     public Session() {
