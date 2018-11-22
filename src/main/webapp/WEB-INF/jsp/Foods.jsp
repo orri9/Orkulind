@@ -10,12 +10,8 @@
     <head>
         <title>Diet Programs</title>
 
-<<<<<<< HEAD
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
         
-=======
-        	<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
->>>>>>> 5f4372e449b206a083e67eaa9757c561c14ea22b
         <style>
             table {
                 font-family: arial, sans-serif;
@@ -162,7 +158,17 @@
     </sf:form>
 
     <%-- This is for the user to enter what he ate --%>
- 
+		<br/>
+	 	<select name="diet list" form="dietform">
+ 		<option value="the zone diet">The Zone Diet</option>
+		<option value="benni">benni</option>
+  		<option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+        <option value="volvo">Volvo</option>
+		<option value="benni">benni</option>
+  		<option value="opel">Opel</option>
+  		<option value="audi">Audi</option>
+		</select>
     </body>
 
 </html>
