@@ -25,4 +25,6 @@ public interface ExerciseService {
 
 	List<Exercise> findAllUserExercises(int id);
 
+
+
 }
