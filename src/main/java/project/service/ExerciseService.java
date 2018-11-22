@@ -21,4 +21,6 @@ public interface ExerciseService {
     
     List<Exercise> findExerciseByType(String type);
 
+	List<Exercise> findAllUserExercises(int id);
+
 }

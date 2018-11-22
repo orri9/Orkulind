@@ -25,6 +25,7 @@ import project.persistence.entities.PostitNote;
 import project.persistence.entities.Session;
 import project.persistence.entities.Training;
 import project.persistence.entities.TrainingList;
+import project.persistence.entities.User;
 import project.service.ExerciseService;
 import project.service.SessionService;
 import project.service.TrainService;
@@ -52,8 +53,8 @@ public class TrainController  {
 
 		model.addAttribute("training",new Training());
 		
-
-        model.addAttribute("allSessions", sessionService.findAllSessions());
+		List<Session> sessions = sessionService.findAllUserSessions(User.logedUser.getId());
+        model.addAttribute("allSessions", sessions);
         return "Train"; // this returns a .jsp file with the path /webapp/WEB-INF/jsp/demo/demo.jsp
     }
 	
@@ -62,7 +63,8 @@ public class TrainController  {
             Model model){
 		
 		
-		model.addAttribute("allSessions", sessionService.findAllSessions());
+		List<Session> sessions = sessionService.findAllUserSessions(User.logedUser.getId());
+        model.addAttribute("allSessions", sessions);
 		
 		TrainingList trainings = new TrainingList();
 		int i = 0;

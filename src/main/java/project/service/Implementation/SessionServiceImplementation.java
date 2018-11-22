@@ -62,4 +62,9 @@ public class SessionServiceImplementation implements SessionService {
 	public List<Session> findSessionByType(String type) {
 		return repository.findSessionByType(type);
 	}
+
+	@Override
+	public List<Session> findAllUserSessions(int id) {
+		return repository.findAllUserSessions(id);
+	}
 }
