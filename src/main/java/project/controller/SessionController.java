@@ -35,15 +35,16 @@ public class SessionController {
         this.exerciseService = exerciseService;
     }
     
-
     @RequestMapping(value = "/sessions", method = RequestMethod.GET)
     public String createSessionViewGet(Model model){
 
         model.addAttribute("session",new Session());
         
         List<Exercise> exercises = exerciseService.findAllUserExercises(User.logedUser.getId());
-
         model.addAttribute("allExercises", exercises);
+        
+        List<Session> sessions = sessionService.findAllUserSessions(User.logedUser.getId());
+        model.addAttribute("allSessions", sessions);
 
         return "Sessions";
     }
@@ -57,10 +58,23 @@ public class SessionController {
         
         List<Exercise> exercises = exerciseService.findAllUserExercises(User.logedUser.getId());
         model.addAttribute("allExercises", exercises);
+        
+        List<Session> sessions = sessionService.findAllUserSessions(User.logedUser.getId());
+        model.addAttribute("allSessions", sessions);
 
         model.addAttribute("session", new Session());
 
         return "Sessions";
+    }
+    
+    @RequestMapping(value = "/removeSession", method = RequestMethod.POST)
+    public String sessionRemoveViewPost(@ModelAttribute("session") Session session,
+                                     Model model){
+    		
+    		
+        sessionService.delete(session);
+
+        return "redirect:/sessions";
     }
 
     @InitBinder     

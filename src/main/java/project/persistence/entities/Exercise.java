@@ -4,8 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "Exercise")
@@ -24,8 +22,7 @@ public class Exercise {
     
     @ManyToMany(mappedBy = "exercises")
     private Set<Session> sessions;
-    
-    @OneToMany(mappedBy="exercise")
+    @OneToMany(mappedBy="exercise", fetch = FetchType.EAGER)
     private Set<Training> trainings;
 
     public Exercise() {

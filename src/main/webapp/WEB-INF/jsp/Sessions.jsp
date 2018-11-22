@@ -50,6 +50,22 @@
 	        <input type="submit" VALUE="Create Session"/>
 			
 	    </sf:form>
+	    
+	    <sf:form class="formBox" method="POST" modelAttribute="session" action="/removeSession">
+
+        		<table>
+           		<tr>
+            			<td>Session:</td>
+            			<td>
+            				<form:select items="${allSessions}" itemLabel = "name" multiple="false" path="id"/>
+					</td>
+            		</tr>
+            
+        		</table>
+        
+        		<input type="submit" VALUE="Remove"/>
+
+    		</sf:form>
   	</div>
 	<%@include file="headerAndFooder/footer.jsp" %>
     </body>

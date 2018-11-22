@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <html lang="en">
 
@@ -67,6 +68,21 @@
 		    	<input type="submit" VALUE="Create Exercise"/>	
 			</div>
 	    </sf:form>
+	    
+	    <sf:form class="formBox" method="POST" modelAttribute="exercise" action="/removeExercise">
+
+        		<table>
+            		<tr>
+            			<td>Exercise:</td>
+            			<td>
+            				<form:select items="${allExercises}" itemLabel = "name" multiple="false" path="id" style="width: 300px"/>
+					</td>
+            		</tr>
+            
+        		</table>
+        
+        		<input type="submit" VALUE="Remove"/>
+       </sf:form>
     </div>
     </div>
   

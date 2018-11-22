@@ -1,5 +1,7 @@
 package project.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,9 +28,19 @@ public class ExerciseController {
 
         model.addAttribute("exercise",new Exercise());
 
-        model.addAttribute("exercises", exerciseService.findAllExercisesReverseOrder());
+        List<Exercise> exercises = exerciseService.findAllUserExercises(User.logedUser.getId());
+        model.addAttribute("allExercises", exercises);
 
         return "Exercises";
+    }
+    
+    @RequestMapping(value = "/removeExercise", method = RequestMethod.POST)
+    public String sessionRemoveViewPost(@ModelAttribute("exercise") Exercise exercise,
+                                     Model model){
+    		
+        exerciseService.delete(exercise);
+
+        return "redirect:/exercises";
     }
     
     // Notkun: user.checkString(s)
@@ -67,11 +79,10 @@ public class ExerciseController {
     	}
     	
     	
-    	exerciseService.save(exercise);
+    		exerciseService.save(exercise);
 
-        model.addAttribute("exercises", exerciseService.findAllExercisesReverseOrder());
- 
-        model.addAttribute("exercise", new Exercise());
+    		List<Exercise> exercises = exerciseService.findAllUserExercises(User.logedUser.getId());
+        model.addAttribute("allExercises", exercises);
 
         return "Exercises";
     }

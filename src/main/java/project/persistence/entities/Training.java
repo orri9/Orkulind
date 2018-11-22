@@ -1,14 +1,9 @@
 package project.persistence.entities;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
 
 import javax.persistence.*;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 
 @Entity
@@ -19,16 +14,17 @@ public class Training {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="session_id", nullable=false)
 	private Session session;
 	private Date date;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="exercise_id", nullable=false)
 	private Exercise exercise;
 	private int reps;
 
+	
     public Training() {
     }
 

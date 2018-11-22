@@ -1,7 +1,6 @@
 package project.persistence.entities;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -22,8 +21,7 @@ public class Session {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable
     private Set<Exercise> exercises;
-    
-    @OneToMany(mappedBy="session")
+    @OneToMany(mappedBy="session", fetch = FetchType.EAGER)
     private Set<Training> trainings;
 
     public Session() {
