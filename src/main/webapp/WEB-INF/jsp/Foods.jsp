@@ -10,8 +10,12 @@
     <head>
         <title>Diet Programs</title>
 
+<<<<<<< HEAD
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
         
+=======
+        	<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+>>>>>>> 5f4372e449b206a083e67eaa9757c561c14ea22b
         <style>
             table {
                 font-family: arial, sans-serif;

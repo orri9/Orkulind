@@ -3,17 +3,12 @@ img {
 	height: 100%;
 }
 
-a:link {
-    text-decoration: none;
-}
 
-a:visited {
-    color: black;
-    background-color: transparent;
-}
 
 body {
     background-color: #FEF2C9;
+    width: 100%;
+    margin: 0;
 }
 
 .head {
@@ -23,6 +18,7 @@ body {
 	display:flex;
 	justify-content: space-around;
 	width: 100%;
+	background-color: lightblue;
 }
 
 .box {
@@ -72,4 +68,23 @@ body {
 
 .footer {
 	width: 100%;
+	position: fixed;
+	background-color: lightblue;
 }
+
+.input {
+	display: flex;
+}
+
+.inputBox {
+	width: 50%;
+}
+
+.formBox {
+	width: 70%;
+	padding: 20px;
+}
+
+
+
+

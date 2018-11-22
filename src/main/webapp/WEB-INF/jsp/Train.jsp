@@ -28,13 +28,13 @@
         </table>
 
     </sf:form>
-    <sf:form method="POST" modelAttribute="training" action="/finishTraining">
-    		<table class="exercises">
-    			<c:forEach var="exercise" items="${training.session.exercises}" varStatus="vs">
+    <sf:form method="POST" modelAttribute="trainings" action="/finishTraining">
+    		<table class="trains">
+    			<c:forEach var="t" items="${trainings.trainingList}"  varStatus="vs">
         			<tr>
-               	 	<td>${exercise.name}</td>
+               	 	<td>${t.exercise.name}</td>
                	 	<td>
-                		<sf:input path="session.exercises[${vs.index}].reps" type="text" placeholder="Enter Reps"/>
+               	 	<sf:input path = "trainingList[${vs.index}].reps" type="text" placeholder="Enter Reps"/>
                	 	</td>
          		</tr>
        		</c:forEach>
