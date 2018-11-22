@@ -71,7 +71,7 @@ public class SessionController {
     public String sessionRemoveViewPost(@ModelAttribute("session") Session session,
                                      Model model){
     		
-    		
+    		session = sessionService.findSession(session.getId());
         sessionService.delete(session);
 
         return "redirect:/sessions";

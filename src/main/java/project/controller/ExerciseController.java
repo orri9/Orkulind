@@ -35,11 +35,11 @@ public class ExerciseController {
     }
     
     @RequestMapping(value = "/removeExercise", method = RequestMethod.POST)
-    public String sessionRemoveViewPost(@ModelAttribute("exercise") Exercise exercise,
+    public String exerciseRemoveViewPost(@ModelAttribute("exercise") Exercise exercise,
                                      Model model){
     		
     		exercise = exerciseService.findExercise(exercise.getId());
-    		exercise.removeExerciseFromSessions();
+    		
         exerciseService.delete(exercise);
 
         return "redirect:/exercises";

@@ -18,7 +18,7 @@ public class Session {
     private String type;
     private int userID;
     
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable
     private Set<Exercise> exercises;
     
@@ -35,6 +35,13 @@ public class Session {
         this.userID = userID;
         this.exercises = exercises;
         this.trainings = trainings;
+    }
+    
+    @PreRemove
+    public void removeSessionFromExercises() {
+        for (Exercise e : exercises) {
+            e.getSessions().remove(this);
+        }
     }
     
     public void addExercise(Exercise exercise) {
@@ -83,31 +90,12 @@ public class Session {
 		this.userID = userID;
 	}
 	
-	// This is for easier debug.
     @Override
     public String toString() {
-        /*String result = String.format(
-                "Session [id=%d, name='%s']%n",
-                id, name);
-        if (exercises != null) {
-            for(Exercise exercise : exercises) {
-                result += String.format(
-                        "Exercise[id=%d, name='%s']%n",
-                        exercise.getId(), exercise.getName());
-            }
-        }*/
 
         return String.format(
                 "%s",
                 id);
     }
-    
-	public Set<Training> getTrainings() {
-		return trainings;
-	}
-
-	public void setTrainings(Set<Training> trainings) {
-		this.trainings = trainings;
-	}
 
 }
