@@ -157,18 +157,38 @@
 
     </sf:form>
 
+    <br />
+    <h2>Input Your your calorie intake here:</h2>   
+    
     <%-- This is for the user to enter what he ate --%>
 		<br/>
 	 	<select name="diet list" form="dietform">
  		<option value="the zone diet">The Zone Diet</option>
-		<option value="benni">benni</option>
-  		<option value="opel">Opel</option>
-        <option value="audi">Audi</option>
-        <option value="volvo">Volvo</option>
-		<option value="benni">benni</option>
-  		<option value="opel">Opel</option>
-  		<option value="audi">Audi</option>
-		</select>
+		<option value="The Atkins diet">The Atkins diet</option>
+  		<option value="Mediterranean diet">Mediterranean diet</option>
+        <option value="Raw food diet">Raw food diet</option>
+        <option value="South Beach diet">South Beach diet</option>
+		<option value="Vegan diet">Vegan diet</option>
+  		<option value="Vegetarian diet">Vegetarian diet</option>
+  		<option value="Ketogenic diet">Ketogenic diet</option>
+        </select>
+
+        <br/>
+	 	<select name="meal of the day" form="mealform">
+ 		<option value="breakfast">breakfast</option>
+		<option value="Second breakfast">Second breakfast</option>
+  		<option value="Brunch">Brunch</option>
+        <option value="Elevenses">Elevenses</option>
+        <option value="Lunch">Lunch</option>
+		<option value="Tea time">Tea time</option>
+  		<option value="Linner">Linner</option>
+        <option value="Supper">Supper</option>
+        <option value="Dinner">Dinner</option>
+  		<option value="After dinner snack">After dinner snack</option>
+        </select>
+
+	    <%@include file="headerAndFooder/footer.jsp" %>
+
     </body>
 
 </html>

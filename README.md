@@ -1,22 +1,16 @@
 # Orkulind
 #TO-DO
 #
-##Matardagbók?
+### Matardagbók?
 ##
-##Edit Exercises?
+### Edit Exercises?
 ##
-##Klára Create Session
+### Klára Create Session
 ##
-##Klára Train
+### Klára Train
 ##
-##Fínpússa Personal Training page
+### Fínpússa Personal Training page
 ##
-##Fínpússa login page
+### Fínpússa login page
 ##
-##Fínpússa Food programs
-##
-##
-##
-##
-##
-##
+### Fínpússa Food programs
