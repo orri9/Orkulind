@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import project.persistence.entities.Exercise;
 import project.persistence.entities.PostitNote;
+import project.persistence.entities.User;
 import project.persistence.repositories.ExerciseRepository;
 import project.persistence.repositories.PostitNoteRepository;
 import project.service.ExerciseService;
@@ -66,4 +67,16 @@ public class ExerciseServiceImplementation implements ExerciseService {
 	public List<Exercise> findAllUserExercises(int id) {
 		return repository.findAllUserExercises(id);
 	}
+
+	@Override
+	public boolean existExercise(Exercise exercise) {
+		List<Exercise> exercises = this.repository.findAll();
+		for (Exercise ex : exercises) {
+	        if (ex.getName().equals(exercise.getName())) {
+	            return true;
+	        }
+	    }
+		return false;
+	}
+	
 }

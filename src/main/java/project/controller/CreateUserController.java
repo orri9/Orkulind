@@ -44,7 +44,6 @@ public class CreateUserController  {
     public String createUserViewPost(@ModelAttribute("storeUser") User user,
                                      Model model){
     	
-    	System.out.println(user.getPassword().trim());
     	if(user.getPassword().matches("(.*\\s+.*)*") || user.getPassword().matches("\\s+.*\\s+")) {
     		model.addAttribute("villa", "Password cant include whitespace");
     		return "CreateUser";

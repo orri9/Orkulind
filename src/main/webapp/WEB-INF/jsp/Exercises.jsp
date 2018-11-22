@@ -20,11 +20,12 @@
     <%--that is added to the model that is passed to the view.--%>
     <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
     <div class="body">
+    	<div class="train">
 	    <sf:form class="formBox" method="POST" modelAttribute="exercise" action="/exercises">
 			
 			<div class="input">
 				<div class="inputBox">
-					<p>Exercise name:</p>
+					<p>Exercise name: ${villa}</p>
 					<sf:input path="name" type="text" placeholder="Enter Name"/>
 				</div>
 				<p class="text inputBox">Here you can add the exercise name. Here is a <a href="http://travelstrong.net/bodyweight-exercises/">list of exercises</a></p>
@@ -32,7 +33,7 @@
 			
 			<div class="input">
 				<div class="inputBox">
-					<p>Targeted area to train:</p>
+					<p>Targeted area to train: ${villa1}</p>
 					<sf:input path="type" type="text" placeholder="Enter Type"/>
 				</div>
 				<p class="text inputBox">Here you can write what area your exercise is targeting.</p>
@@ -40,7 +41,7 @@
 			
 			<div class="input">
 				<div class="inputBox">
-					<p>Rep Type:</p>
+					<p>Rep Type: ${villa2}</p>
 		        	<sf:input path="repType" type="text" placeholder="Enter Rep Type"/>
 				</div>
 				<p class="text inputBox">Here you can write what your rep is based on time or reps.</p>
@@ -66,9 +67,8 @@
 		    	<input type="submit" VALUE="Create Exercise"/>	
 			</div>
 	    </sf:form>
-	    
     </div>
-    
+    </div>
   
 	<%@include file="headerAndFooder/footer.jsp" %>
     </body>

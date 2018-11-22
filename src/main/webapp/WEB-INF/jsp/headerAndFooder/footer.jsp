@@ -1,6 +1,5 @@
 <footer>
 	<div class="box footer">
-		<h2>Footer</h2>
-		<a href="/personal">Heim</a>
+		<a href="/personal"><h2>Personal training page</h2></a>
 	</div>
 </footer>

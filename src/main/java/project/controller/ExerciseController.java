@@ -30,12 +30,42 @@ public class ExerciseController {
 
         return "Exercises";
     }
-
+    
+    // Notkun: user.checkString(s)
+    // Fyrir: User user, String s
+    // Eftir: Ath hvort að Strengur sé bara whitespace eða hvort strengur sé tómur
+    public static boolean checkString(String s) {
+    	
+    	if(s.length() == 0) return true;
+    	if(s.matches("(\\s+)")) return true;
+    	return false;
+    }
+    
     @RequestMapping(value = "/exercises", method = RequestMethod.POST)
     public String exerciseViewPost(@ModelAttribute("exercise") Exercise exercise,
                                      Model model){
     	
     	exercise.setUserID(User.logedUser.getId());
+    	if(checkString(exercise.getName())) {
+    		model.addAttribute("villa", "Input cant be empty");
+    		return "Exercises";
+    	}
+    	
+    	if(exerciseService.existExercise(exercise)) {
+    		model.addAttribute("villa", "Name already taken");
+    		return "Exercises";	
+    	}
+    	
+    	if(checkString(exercise.getType())) {
+    		model.addAttribute("villa1", "Input cant be empty");
+    		return "Exercises";
+    	}
+    	
+    	if(checkString(exercise.getRepType())) {
+    		model.addAttribute("villa2", "Input cant be empty");
+    		return "Exercises";
+    	}
+    	
     	
     	exerciseService.save(exercise);
 

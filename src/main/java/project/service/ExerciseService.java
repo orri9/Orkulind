@@ -20,6 +20,8 @@ public interface ExerciseService {
     List<Exercise> findExerciseByName(String name);
     
     List<Exercise> findExerciseByType(String type);
+    
+    boolean existExercise(Exercise exercise);
 
 	List<Exercise> findAllUserExercises(int id);
 

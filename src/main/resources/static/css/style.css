@@ -68,8 +68,7 @@ body {
 
 .footer {
 	width: 100%;
-	position: fixed;
-	background-color: lightblue;
+
 }
 
 .input {
@@ -85,6 +84,13 @@ body {
 	padding: 20px;
 }
 
+.train {
+	
+}
+
+.trainCheckBox {
+	
+}
 
 
 

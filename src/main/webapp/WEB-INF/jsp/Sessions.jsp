@@ -9,45 +9,49 @@
 
     <head>
         <title>Session</title>
-
-        <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
     </head>
     <body>
-
-    <h1><a href="/sessions">Sessions</a></h1>
-
+	
+	<div class="headBox">
+		<h1>Sessions</h1>
+	</div>
+    
+	<div class="body">
     <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
     <%--that is added to the model that is passed to the view.--%>
     <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
-    <sf:form method="POST" modelAttribute="session" action="/sessions">
-
-        <table>
-            <tr>
-                <td> Name:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="name" type="text" placeholder="Enter Name"/></td>
-            </tr>
-            <tr>
-                <td> Type:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="type" type="text" placeholder="Enter Type"/></td>
-            </tr>
-            
-            <tr>
-            		<td>Exercises:</td>
-            		<td>
-            			<form:select items="${allExercises}" multiple="true" path="exercises" itemLabel = "name" style="width: 300px"/>
-            			
-				</td>
-            </tr>
-            
-        </table>
-
-        <input type="submit" VALUE="Create Session"/>
-
-    </sf:form>
-  
-
+	    <sf:form class="formBox" method="POST" modelAttribute="session" action="/sessions">
+	    	
+			<div class="input">
+					<div class="inputBox">
+						<p>Name:</p>
+						<sf:input path="name" type="text" placeholder="Enter Name"/>
+					</div>
+					<p class="text inputBox">Here you can add the exercise name. Here is a <a href="http://travelstrong.net/bodyweight-exercises/">list of exercises</a></p>
+			</div>
+			
+			<div class="input">
+					<div class="inputBox">
+						<p>Type:</p>
+						<sf:input path="type" type="text" placeholder="Enter Type"/>
+					</div>
+					<p class="text inputBox">Text</p>
+			</div>
+			
+			<div class="input">
+					<div class="inputBox">
+						<p>Exercises:</p>
+						<form:select items="${allExercises}" multiple="true" path="exercises" itemLabel = "name" style="width: 300px"/>
+					</div>
+					<p class="text inputBox">Text</p>
+			</div>
+	
+	        <input type="submit" VALUE="Create Session"/>
+			
+	    </sf:form>
+  	</div>
+	<%@include file="headerAndFooder/footer.jsp" %>
     </body>
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

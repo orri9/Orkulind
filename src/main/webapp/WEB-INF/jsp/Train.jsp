@@ -11,23 +11,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
 </head>
 <body>
-	<h1>Train</h1>
 	
+	<div class="headBox">
+		<h1>Train</h1>
+	</div>
+	<div class="body">
+	
+	<div class="trainCheckBox">
 	<sf:form method="POST" modelAttribute="training" action="/train">
 
         <table>
             <tr>
             		<td>Session:</td>
             		<td>
-            			<form:select items="${allSessions}" onchange="this.form.submit()" itemLabel = "name" multiple="false" path="session" style="width: 1000px"/>
+            			<form:select items="${allSessions}" onchange="this.form.submit()" itemLabel = "name" multiple="false" path="session" style="width: 300px"/>	
 				</td>
             </tr>
             
         </table>
-
     </sf:form>
+	</div>
+	
+	
     <sf:form method="POST" modelAttribute="trainings" action="/finishTraining">
     		<table class="trains">
     			<c:forEach var="t" items="${trainings.trainingList}"  varStatus="vs">
@@ -36,11 +44,12 @@
                	 	<td>
                	 	<sf:input path = "trainingList[${vs.index}].reps" type="text" placeholder="Enter Reps"/>
                	 	</td>
-         		</tr>
-       		</c:forEach>
+         			</tr>
+       			</c:forEach>
    		</table>
    		
    		<input type="submit" VALUE="Finish"/>
    	</sf:form>
+   	</div>
 </body>
 </html>
