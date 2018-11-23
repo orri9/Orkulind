@@ -33,25 +33,8 @@ public class TrainServiceImplementation implements TrainService {
         repository.delete(training);
     }
 
-    /*
-    @Override
-    public List<Training> findAllTrainings() {
-        return repository.findAll();
-    }
-
-    @Override
-    public List<Training> findAllTrainingsReverseOrder() {
-
-        List<Training> trainings = repository.findAll();
-
-        Collections.reverse(trainings);
-
-        return trainings;
-    }
-
-    @Override 
-    public Training findTraining(int id) {
-        return repository.findTraining(id);
-    }
-    */
+	@Override
+	public List<Training> findTrainingsByFilter(Stats stats) {
+		return repository.findTrainingsByFilter(stats.getExercise(), stats.getStartDate(), stats.getEndDate());
+	}
 }
