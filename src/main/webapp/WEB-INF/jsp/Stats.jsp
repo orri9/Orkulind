@@ -5,6 +5,7 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
+
 <html lang="en">
 <head>
         <title>Statistics</title>
@@ -29,8 +30,10 @@
 				</td>
 			</tr>
 		</table>
-		<input type="submit" VALUE="Get"/>
+		<input type="submit" VALUE="Get Statistics"/>
 	</sf:form>
+
+	<div id="chartContainer" style="height: 350px; width: 700px;"></div>
 	
 	<table>
 		<tr>
@@ -41,8 +44,65 @@
 				${calcStats.averageReps}
 			</td>
 		</tr>
+		<tr>
+			<td>
+				Total Reps:
+			</td>
+			<td>
+				${calcStats.totalReps}
+			</td>
+		</tr>
 	</table>
+	
 </body>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+
+var dps = [[]];
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2", // "light1", "dark1", "dark2"
+	animationEnabled: true,
+	title: {
+		text: "Progress",
+		padding: 20
+	},
+	axisX: {
+		valueFormatString: "D MMM"
+	},
+	axisY: {
+		title: "Reps",
+		gridThickness: 0.5
+	},
+	data: [{
+		type: "line",
+		xValueType: "dateTime",
+		xValueFormatString: "D MMM a't' HH:mm",
+		yValueFormatString: "#0 reps",
+		dataPoints: dps[0]
+	}]
+});
+ 
+var xValue;
+var yValue;
+<c:choose>
+<c:when test="${not empty calcStats.dataPoints}">
+<c:forEach items="${calcStats.dataPoints}" var="points" varStatus="loop">	
+<c:forEach items="${points}" var="point">
+	xValue = parseInt("${point.x}");
+	yValue = parseFloat("${point.y}");
+	dps[parseInt("${loop.index}")].push({
+		x : xValue,
+		y : yValue
+	});		
+</c:forEach>	
+</c:forEach> 
+chart.render();
+</c:when>
+</c:choose>
+ 
+}
+</script>
 
 </html>
 

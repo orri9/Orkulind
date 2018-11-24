@@ -1,8 +1,10 @@
 package project.persistence.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -13,10 +15,11 @@ public class Stats {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
     private Exercise exercise;
-    List<Training> trainings;
+    private List<Training> trainings;
     
-    Double totalReps;
-    Double averageReps;
+    private Double totalReps;
+    private Double averageReps;
+    private List<List<Map<Object,Object>>> dataPoints = new ArrayList<List<Map<Object,Object>>>();
 
     public Stats() {
     }
@@ -31,6 +34,7 @@ public class Stats {
     public void calculate() {
     		calculateTotalReps();
     		calculateAverageReps();
+    		calculateDataPoints();
 	}
     
     public void calculateAverageReps() {
@@ -45,7 +49,17 @@ public class Stats {
 		totalReps = sumReps;
 	}   
     
-    
+	public void calculateDataPoints() {
+		Map<Object,Object> map = null;
+		List<Map<Object,Object>> points = new ArrayList<Map<Object,Object>>();
+		for(Training t : trainings) {
+			map = new HashMap<Object,Object>(); map.put("x", t.getDate().getTime()); 
+			map.put("y", t.getReps());
+			points.add(map);
+		}
+		
+		dataPoints.add(points);
+	}
     
     // Getters & Setters
 
@@ -95,6 +109,14 @@ public class Stats {
 
 	public void setAverageReps(Double averageReps) {
 		this.averageReps = averageReps;
+	}
+
+	public List<List<Map<Object, Object>>> getDataPoints() {
+		return dataPoints;
+	}
+
+	public void setDataPoints(List<List<Map<Object, Object>>> dataPoints) {
+		this.dataPoints = dataPoints;
 	}
     
     

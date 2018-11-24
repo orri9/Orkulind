@@ -50,6 +50,12 @@
 					</a>
 					<a href="\food">Food programs</a>
 				</div>
+				<div class="box">
+					<a href="\statistics">
+						<img src="https://previews.123rf.com/images/clairev/clairev1306/clairev130600087/20458429-%E9%87%8E%E8%8F%9C%E3%81%AE%E3%83%86%E3%83%BC%E3%83%9E-%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3.jpg">
+					</a>
+					<a href="\statistics">Statistics</a>
+				</div>
 			</div>
 		
 		</div>
