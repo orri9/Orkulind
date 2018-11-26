@@ -61,7 +61,7 @@
 			</td>
 		</tr>
 	</table>
-	
+	<%@include file="headerAndFooder/footer.jsp" %>
 </body>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script type="text/javascript">
