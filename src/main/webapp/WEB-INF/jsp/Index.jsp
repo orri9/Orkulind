@@ -55,25 +55,16 @@
 		    </sf:form>
 		    
 			
-			<div class="box">
-				<a href="/personal">Personal training page</a>
-			</div>
-	
-		    
 		    <div class="box">
+		    	<p>${villa}</p>
 		    	<a href="/createUser">Create User</a>
 		    </div>
 			
 		</div>
 		</div>
-			<p>${villa}</p>
 			    
-    	
 	</div>
 	</div>
-	
-	
-	<canvas class="background"></canvas>
     </body>
     
 </html>

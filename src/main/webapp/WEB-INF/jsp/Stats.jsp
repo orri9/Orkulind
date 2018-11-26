@@ -7,13 +7,21 @@
 
 
 <html lang="en">
-<head>
+	<head>
         <title>Statistics</title>
 
-        <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/styleIndex.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/header.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/footer.css"/>"/>
     </head>
 <body>
-	<h1>Statistcis</h1>
+	<div class="header">
+			<div class="headBox">
+		  			<h1>Statistic</h1>
+			</div>
+	</div>
+	
 	<sf:form class="formBox" method="POST" modelAttribute="stats" action="/statistics">
 		<table>
 			<tr>

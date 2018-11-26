@@ -19,14 +19,21 @@
 </head>
 <body>
 	
-	<div class="headBox">
-		<h1>Train</h1>
+	<div class="header">
+			<div class="headBox">
+		  			<h1>Train</h1>
+			</div>
 	</div>
+	
 	<div class="body">
+	<div class="train">
 	
 	<div class="trainCheckBox">
-	<sf:form method="POST" modelAttribute="training" action="/train">
-
+	
+	
+	<sf:form class="formBox" method="POST" modelAttribute="training" action="/train">
+		<div class="input">
+		
         <table>
             <tr>
             		<td>Session:</td>
@@ -36,24 +43,32 @@
             </tr>
             
         </table>
+        
+        </div>
     </sf:form>
 	</div>
 	
 	
     <sf:form method="POST" modelAttribute="trainings" action="/finishTraining">
-    		<table class="trains">
     			<c:forEach var="t" items="${trainings.trainingList}"  varStatus="vs">
-        			<tr>
-               	 	<td>${t.exercise.name}</td>
-               	 	<td>
-               	 	<sf:input path = "trainingList[${vs.index}].reps" type="text" placeholder="Enter Reps"/>
-               	 	</td>
-         			</tr>
+        			
+         			<div class="input">
+					<div class="inputBox">
+					<p>${t.exercise.name}</p>
+					<sf:input path = "trainingList[${vs.index}].reps" type="text" placeholder="Enter Reps"/>
+					</div>
+					<p class="text inputBox">Here you can write what area your exercise is targeting.</p>
+					</div>
        			</c:forEach>
-   		</table>
-   		
-   		<input type="submit" VALUE="Finish"/>
+       			
+		<div class="input submit">
+				<div class="inputBox">
+					<p>Here you can finish your training session</p>
+			        <input type="submit" VALUE="Finish"/>
+				</div>
+		</div>
    	</sf:form>
+   	</div>
    	</div>
    	<%@include file="headerAndFooder/footer.jsp" %>
 </body>
