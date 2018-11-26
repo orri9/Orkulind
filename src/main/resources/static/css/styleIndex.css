@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.homePage {
+	display:flex;
+	width: auto;
+	flex-direction:column;
+}
+
+.loginBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: whitesmoke;
+	margin: 20px;
+	border:	solid;
+	width: 70%;
+	padding: 20px;
+}

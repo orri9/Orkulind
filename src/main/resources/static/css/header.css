@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.header {
+	width: 100%;
+	display:flex;
+	justify-content: space-around;
+
+}
+
+.headBox {
+	width: 90%;
+	background-color: whitesmoke;
+	margin: 20px;
+	text-align: center;
+	border: solid;
+}
+

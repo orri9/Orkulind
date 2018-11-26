@@ -10,17 +10,21 @@
     <head>
         <title>Session</title>
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/styleIndex.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/header.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/footer.css"/>"/>
     </head>
     <body>
 	
-	<div class="headBox">
-		<h1>Sessions</h1>
+	<div class="header">
+			<div class="headBox">
+		  			<h1>Create Session</h1>
+			</div>
 	</div>
     
 	<div class="body">
-    <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
-    <%--that is added to the model that is passed to the view.--%>
-    <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
+		<div class="train">
 	    <sf:form class="formBox" method="POST" modelAttribute="session" action="/sessions">
 	    	
 			<div class="input">
@@ -46,26 +50,32 @@
 					</div>
 					<p class="text inputBox">Text</p>
 			</div>
-	
-	        <input type="submit" VALUE="Create Session"/>
+			
+			<div class="input submit">
+				<div class=inputBox>
+					<p>Here you can create your session when finish.</p>
+					<input type="submit" VALUE="Create Session"/>
+				</div>
+			</div>
 			
 	    </sf:form>
 	    
 	    <sf:form class="formBox" method="POST" modelAttribute="session" action="/removeSession">
-
+			<div class="input">
         		<table>
            		<tr>
-            			<td>Session:</td>
+            			<td></td>
             			<td>
-            				<form:select items="${allSessions}" itemLabel = "name" multiple="false" path="id"/>
+            				<form:select items="${allSessions}" itemLabel = "name" multiple="false" path="id" style="width: 300px"/>
 					</td>
             		</tr>
             
         		</table>
         
         		<input type="submit" VALUE="Remove"/>
-
+			</div>
     		</sf:form>
+    		</div>
   	</div>
 	<%@include file="headerAndFooder/footer.jsp" %>
     </body>

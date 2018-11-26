@@ -9,12 +9,18 @@
 
     <head>
         <title>Exercises</title>
-		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/styleIndex.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/header.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/footer.css"/>"/>
     </head>
     <body>
 
-		<div class="headBox">
-			<h1>Create Exercises</h1>
+		<div class="header">
+			<div class="headBox">
+		  			<h1>Create Exercises</h1>
+			
+			</div>
 		</div>
 		
     <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
@@ -22,6 +28,7 @@
     <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
     <div class="body">
     	<div class="train">
+    	<div class="exercise">
 	    <sf:form class="formBox" method="POST" modelAttribute="exercise" action="/exercises">
 			
 			<div class="input">
@@ -62,18 +69,21 @@
 			        <sf:textarea path="info" type="text" placeholder="Enter Info"/>
 				</div>
 				<p class="text inputBox"> Some info about exercise </p>
+				
 			</div>
-			
-			<div>
-		    	<input type="submit" VALUE="Create Exercise"/>	
+			<div class="input submit">
+				<div class="inputBox">
+					<p>Here you can create you exercises when finish.</p>
+			        <input type="submit" VALUE="Create Exercise"/>
+				</div>
 			</div>
 	    </sf:form>
 	    
 	    <sf:form class="formBox" method="POST" modelAttribute="exercise" action="/removeExercise">
-
+			<div class="input">
         		<table>
             		<tr>
-            			<td>Exercise:</td>
+            			<td></td>
             			<td>
             				<form:select items="${allExercises}" itemLabel = "name" multiple="false" path="id" style="width: 300px"/>
 					</td>
@@ -82,7 +92,9 @@
         		</table>
         
         		<input type="submit" VALUE="Remove"/>
+        		</div>
        </sf:form>
+       </div>
     </div>
     </div>
   

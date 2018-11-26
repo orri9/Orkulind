@@ -11,7 +11,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/styleIndex.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/header.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/footer.css"/>"/>
 </head>
 <body>
 	
@@ -51,5 +55,6 @@
    		<input type="submit" VALUE="Finish"/>
    	</sf:form>
    	</div>
+   	<%@include file="headerAndFooder/footer.jsp" %>
 </body>
 </html>

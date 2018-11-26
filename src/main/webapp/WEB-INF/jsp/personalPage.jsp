@@ -8,14 +8,19 @@
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/styleIndex.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/header.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/footer.css"/>"/>
 		<title>Insert title here</title>
 	</head>
+	
 	<body>
-		<div class="headBox">
-			<%@include file="headerAndFooder/header.jsp" %>
-			<h1>Personal Training Page</h1>
+		<div class="header">
+			<div class="headBox">
+				<h1>Personal Training Page</h1>
+			</div>
 		</div>
-		
 		<p>${logedUser}</p>
 		
 		<div class="body">
