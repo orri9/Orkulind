@@ -36,7 +36,7 @@
 					<p>Exercise name: ${villa}</p>
 					<sf:input path="name" type="text" placeholder="Enter Name"/>
 				</div>
-				<p class="text inputBox">Here you can add the exercise name. Here is a <a href="http://travelstrong.net/bodyweight-exercises/">list of exercises</a></p>
+				<p class="text inputBox">Here you can add the exercise name. Here is a <a class="blackText" href="http://travelstrong.net/bodyweight-exercises/">list of exercises</a></p>
 			</div>
 			
 			<div class="input">

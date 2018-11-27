@@ -24,6 +24,10 @@ a {
 	text-decoration: none;
 }
 
+a.blackText {
+	color: black;
+}
+
 .kassi {
 	display: flex;
 	justify-contend: center;
