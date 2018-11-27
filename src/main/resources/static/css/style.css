@@ -131,4 +131,7 @@ input[type=password], select {
 	padding: 20px;
 }
 
-
+.icon {
+	display: flex;
+	justify-content: center;
+}

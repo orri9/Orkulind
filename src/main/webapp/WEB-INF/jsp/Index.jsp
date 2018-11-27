@@ -22,14 +22,16 @@
 	</div>
 	<div class="homePage">
 	<div >
-		<div class="textBox">
-			<p class="text border">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec ipsum non lorem hendrerit interdum. Cras at arcu urna. Fusce ornare ullamcorper imperdiet. Nunc id quam consequat, commodo massa vel, vehicula magna. Pellentesque quis neque egestas, convallis tellus sed, rutrum felis. Praesent tellus felis, iaculis nec felis nec, pellentesque tempor risus. Aenean a massa nisi. Vivamus massa est, posuere ut tincidunt nec, vulputate eget dolor. Donec sed quam egestas, pellentesque nisl non, cursus urna. Sed nec neque at quam sagittis tempus. Aliquam quis finibus ligula. Vestibulum vitae dolor ex.
-			Pellentesque mattis eros sed nisi auctor, eget gravida mauris mollis. Etiam ac lectus pellentesque, ultricies ante nec, vehicula nisi. Morbi ac quam ut tortor aliquet sollicitudin id eu leo. Nam ut nisl efficitur, mollis nisl sed, dignissim odio. Etiam fringilla aliquam nisl non vehicula. Donec tempor, justo vitae fringilla molestie, odio lacus vulputate lorem, a ultricies risus est nec est. Suspendisse eget metus ut felis imperdiet facilisis ut non nisi. In hac habitasse platea dictumst. Nunc blandit nibh imperdiet ex varius sodales. Curabitur hendrerit suscipit lectus vitae fringilla. Nulla tempus posuere ante eget placerat. Sed et velit id mauris mattis venenatis in nec odio. Aenean non lectus eget sapien lobortis finibus vitae eu lorem. Curabitur pulvinar auctor sapien at mattis. Quisque a purus mi. In vulputate, lacus vitae consectetur vestibulum, ante orci porta ex, quis semper lorem mauris at mi.
-			</p>
+		<div class="textBox icon>
+				<img src="logo_icon.png">
+			
 		</div>
+
 		<div class="textBox">
-			<p class="text border">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec ipsum non lorem hendrerit interdum. Cras at arcu urna. Fusce ornare ullamcorper imperdiet. Nunc id quam consequat, commodo massa vel, vehicula magna. Pellentesque quis neque egestas, convallis tellus sed, rutrum felis. Praesent tellus felis, iaculis nec felis nec, pellentesque tempor risus. Aenean a massa nisi. Vivamus massa est, posuere ut tincidunt nec, vulputate eget dolor. Donec sed quam egestas, pellentesque nisl non, cursus urna. Sed nec neque at quam sagittis tempus. Aliquam quis finibus ligula. Vestibulum vitae dolor ex.
-			Pellentesque mattis eros sed nisi auctor, eget gravida mauris mollis. Etiam ac lectus pellentesque, ultricies ante nec, vehicula nisi. Morbi ac quam ut tortor aliquet sollicitudin id eu leo. Nam ut nisl efficitur, mollis nisl sed, dignissim odio. Etiam fringilla aliquam nisl non vehicula. Donec tempor, justo vitae fringilla molestie, odio lacus vulputate lorem, a ultricies risus est nec est. Suspendisse eget metus ut felis imperdiet facilisis ut non nisi. In hac habitasse platea dictumst. Nunc blandit nibh imperdiet ex varius sodales. Curabitur hendrerit suscipit lectus vitae fringilla. Nulla tempus posuere ante eget placerat. Sed et velit id mauris mattis venenatis in nec odio. Aenean non lectus eget sapien lobortis finibus vitae eu lorem. Curabitur pulvinar auctor sapien at mattis. Quisque a purus mi. In vulputate, lacus vitae consectetur vestibulum, ante orci porta ex, quis semper lorem mauris at mi.
+			<p class="text border">
+				Orkulind is a website with ways to refine your lifestyle, fitness and diet. We help people change what needs to be changed to gain 
+				better health and a better life. Orkulind attaches great importance to keeping track of everything that happens in the large and 
+				complex world of healthcare industry, bringing it to its customers in the simplest and most understandable way.
 			</p>
 		</div>
 		
