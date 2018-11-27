@@ -11,6 +11,10 @@
         <title>Diet Programs</title>
 
 		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+		<link rel="stylesheet" type="text/css" href="<c:url value="/css/style.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/styleIndex.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/header.css"/>"/>
+    	<link rel="stylesheet" type="text/css" href="<c:url value="/css/footer.css"/>"/>
         
         <style>
             table {
@@ -28,12 +32,18 @@
             tr:nth-child(even) {
                 background-color: #A1C8A0;
             }
+            tr:nth-child(odd) {
+                background-color: #f5f5f5;
+            }
+
         </style>
     </head>
     <body>
-
-    <h1><a href="/food">Diet Programs</a></h1>
-
+    <div class="header">
+		<div class="headBox">
+            <h1><a class = "blackText" href="/food">Diet Programs</a></h1>
+		</div>
+    </div>   
             <tr>
    <c:choose>
         <c:when test="${not empty Food}">
@@ -46,7 +56,7 @@
                 </tr>
                 
                 <tr>
-                    <td><a href="https://www.medicalnewstoday.com/articles/7382.php">${"The Zone diet"}</a></td>
+                    <td><a class = "blackText" href="https://www.medicalnewstoday.com/articles/7382.php">${"The Zone diet"}</a></td>
                     <td>${"Protein/Fat/carbohydrates"}</td>
                     <td>${"40 percent carbohydrates, 30 percent fats, and 30 percent protein"}</td>
                     <td>${"The focus is also on controlling insulin levels, which may result in more successful 
@@ -54,7 +64,7 @@
                 </tr>
                 
                 <tr>
-                    <td><a href="https://www.medicalnewstoday.com/articles/7379.php">${"The Atkins diet"}</a></td>
+                    <td><a class = "blackText" href="https://www.medicalnewstoday.com/articles/7379.php">${"The Atkins diet"}</a></td>
                     <td>${"Protein/Fat"}</td>
                     <td>${"Low-carbohydrate"}</td>
                     <td>${"The Atkins diet, or Atkins nutritional approach, focuses on controlling the levels of 
@@ -62,7 +72,7 @@
                 </tr>
             
                 <tr>
-                    <td><a href="https://www.medicalnewstoday.com/articles/149090.php">${"Mediterranean diet"}</a></td>
+                    <td><a class = "blackText" href="https://www.medicalnewstoday.com/articles/149090.php">${"Mediterranean diet"}</a></td>
                     <td>${"Plants ,fruits , beans, nuts, whole grains, seeds, olive oil"}</td>
                     <td>${"30 percent fats"}</td>
                     <td>${"The emphasis is on lots of plant foods, fresh fruits as dessert, beans, nuts, whole grains, 
@@ -70,7 +80,7 @@
                 </tr>
             
                 <tr>
-                    <td><a href="https://www.medicalnewstoday.com/articles/7381.php">${"Raw food diet"}</a></td>
+                    <td><a class = "blackText" href="https://www.medicalnewstoday.com/articles/7381.php">${"Raw food diet"}</a></td>
                     <td>${"Non processed food"}</td>
                     <td>${"75 percent Non processed uncooked food"}</td>
                     <td>${"The raw food diet, or raw foodism, involves consuming foods and drinks that are not processed, 
@@ -79,7 +89,7 @@
                 </tr>
                 
                 <tr>
-                    <td><a href="https://www.medicalnewstoday.com/articles/7380.php">${"South Beach diet"}</a></td>
+                    <td><a class = "blackText" href="https://www.medicalnewstoday.com/articles/7380.php">${"South Beach diet"}</a></td>
                     <td>${"carbohydrates"}</td>
                     <td>${"unrefined slow carbohydrates"}</td>
                     <td>${"It focuses on the control of insulin levels, and the benefits of unrefined slow 
@@ -87,7 +97,7 @@
                 </tr>
                 
                 <tr>
-                    <td><a href="https://www.medicalnewstoday.com/articles/149636.php">${"Vegan diet"}</a></td>
+                    <td><a class = "blackText" href="https://www.medicalnewstoday.com/articles/149636.php">${"Vegan diet"}</a></td>
                     <td>${"No animal-based foods"}</td>
                     <td>${"Vegan"}</td>
                     <td>${"A vegan does not eat anything that is animal-based, including eggs, dairy, and honey. 
@@ -96,7 +106,7 @@
                 </tr>
                 
                 <tr>
-                    <td><a href="https://www.medicalnewstoday.com/articles/8749.php">${"Vegetarian diet"}</a></td>
+                    <td><a class = "blackText" href="https://www.medicalnewstoday.com/articles/8749.php">${"Vegetarian diet"}</a></td>
                     <td>${"No animal-based foods"}</td>
                     <td>${"Vegan"}</td>
                     <td>${"A vegan does not eat anything that is animal-based, including eggs, dairy, and honey. 
@@ -105,7 +115,7 @@
                 </tr>
                 
                 <tr>
-                    <td><a href="https://www.medicalnewstoday.com/articles/180858.php">${"Ketogenic diet"}</a></td>
+                    <td><a class = "blackText" href="https://www.medicalnewstoday.com/articles/180858.php">${"Ketogenic diet"}</a></td>
                     <td>${"Fat"}</td>
                     <td>${"Healthy fats, Low-carbohydrate"}</td>
                     <td>${"The diet causes the break down of fat deposits for fuel and creates substances called 
@@ -114,7 +124,7 @@
                 
                 <c:forEach var="postfood" items="${Foods}">
                     <tr>
-                        <td><a href="https://www.medicalnewstoday.com/articles/5847.php">${postfood.name}</a></td>
+                        <td><a class = "blackText" href="https://www.medicalnewstoday.com/articles/5847.php">${postfood.name}</a></td>
                         <td>${postfood.meal}</td>
                         <td>${postfood.diet}</td>
                         <td>${postfood.recipe}</td>
@@ -129,7 +139,12 @@
         </c:otherwise>
     </c:choose>             
     <br />
-    <h2>Make Your Own Diet Program:</h2>   
+    <div class="header">
+			<div class="headBox">
+		  			<h2>Make Your Own Diet Program:</h2>   
+			</div>
+    </div>
+    
             </tr>
     <sf:form method="POST" modelAttribute="Food" action="/postfood">
 
@@ -152,17 +167,31 @@
             </tr>
             
         </table>
-
-        <input type="submit" VALUE="Create Diet Program"/>
-
+        
+        <div class="input submit">
+				<div class="inputBox">
+					<p>Here you can finish making your diet program:</p>
+			        <input type="submit" VALUE="Create Diet Program"/>
+				</div>
+        </div>
+        
     </sf:form>
 
     <br />
-    <h2>Input Your your calorie intake here:</h2>   
+        <div class="header">
+			<div class="headBox">
+		  			<h2>Input Your your calorie intake here:</h2>   
+			</div>
+    </div>   
     
     <%-- This is for the user to enter what he ate --%>
-		<br/>
-	 	<select name="diet list" form="dietform">
+        <br/>
+        <div class="header">
+			<div class="headBox">
+		  		<h5>Input What Diet:</h5>   
+			</div>
+        </div>
+    	<select name="diet list" form="dietform">
  		<option value="the zone diet">The Zone Diet</option>
 		<option value="The Atkins diet">The Atkins diet</option>
   		<option value="Mediterranean diet">Mediterranean diet</option>
@@ -173,7 +202,11 @@
   		<option value="Ketogenic diet">Ketogenic diet</option>
         </select>
 
-        <br/>
+        <div class="header">
+			<div class="headBox">
+		  		<h5>Input what meal of the day this was:</h5>   
+			</div>
+        </div>
 	 	<select name="meal of the day" form="mealform">
  		<option value="breakfast">breakfast</option>
 		<option value="Second breakfast">Second breakfast</option>
@@ -187,7 +220,26 @@
   		<option value="After dinner snack">After dinner snack</option>
         </select>
 
-	    <%@include file="headerAndFooder/footer.jsp" %>
+            <br />
+            <br />
+
+        <sf:form method="POST" modelAttribute="Food" action="/postfood">
+            <div class="header">
+			    <div class="headBox">
+		  		    <h5>Enter How Many Calories:</h5>   
+			    </div>
+            </div>
+
+            <td><sf:input path="name" type="text" placeholder="Enter Calories"/></td>
+            <div class="input submit">
+			    <div class="inputBox">
+		            <p>Here you can submit your Meal:</p>
+			        <input type="submit" VALUE="Submit meal"/>
+				</div>
+            </div>  
+        </sf:form>
+        
+        <%@include file="headerAndFooder/footer.jsp" %>
 
     </body>
 

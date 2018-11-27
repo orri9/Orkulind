@@ -24,7 +24,7 @@ public class Food {
     private String diet;
 
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
-    // to our model so we can use it with our form
+    // to our model so we can use it with our for
     public Food() {
     }
 
