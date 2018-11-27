@@ -28,7 +28,7 @@
     <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
     <div class="body">
     	<div class="train">
-    	<div class="exercise">
+    	
 	    <sf:form class="formBox" method="POST" modelAttribute="exercise" action="/exercises">
 			
 			<div class="input">
@@ -65,10 +65,10 @@
 			
 			<div class="input">
 				<div class="inputBox">
-					<p>Info:</p>
-			        <sf:textarea path="info" type="text" placeholder="Enter Info"/>
+					<p>Link:</p>
+			        <sf:input path="info" type="text" placeholder="Enter Info"/>
 				</div>
-				<p class="text inputBox"> Some info about exercise </p>
+				<p class="text inputBox">Here you can add an embedet youtube link to add video or text</p>
 				
 			</div>
 			<div class="input submit">
@@ -95,7 +95,6 @@
         		</div>
        </sf:form>
        </div>
-    </div>
     </div>
   
 	<%@include file="headerAndFooder/footer.jsp" %>

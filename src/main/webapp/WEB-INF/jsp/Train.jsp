@@ -55,9 +55,13 @@
          			<div class="input">
 					<div class="inputBox">
 					<p>${t.exercise.name}</p>
+					<p>Goal reps: ${t.exercise.reps}</p>
+					<p>What type of rep: ${t.exercise.repType}
 					<sf:input path = "trainingList[${vs.index}].reps" type="text" placeholder="Enter Reps"/>
 					</div>
-					<p class="text inputBox">Here you can write what area your exercise is targeting.</p>
+						<div class="videos">
+							${t.exercise.info}
+						</div>
 					</div>
        			</c:forEach>
        			

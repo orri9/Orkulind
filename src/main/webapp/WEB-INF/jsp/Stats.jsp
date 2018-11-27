@@ -22,6 +22,10 @@
 			</div>
 	</div>
 	
+	<div class="body">
+	<div class="train">
+	
+	<div class="input">
 	<sf:form class="formBox" method="POST" modelAttribute="stats" action="/statistics">
 		<table>
 			<tr>
@@ -40,27 +44,22 @@
 		</table>
 		<input type="submit" VALUE="Get Statistics"/>
 	</sf:form>
-
+	</div>
+	
 	<div id="chartContainer" style="height: 350px; width: 700px;"></div>
 	
-	<table>
-		<tr>
-			<td>
-				Average Reps:
-			</td>
-			<td>
-				${calcStats.averageReps}
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Total Reps:
-			</td>
-			<td>
-				${calcStats.totalReps}
-			</td>
-		</tr>
-	</table>
+	
+	<div class="input">
+		<h3>Avrage Reps: ${calcStats.averageReps}</h3>
+	</div>
+	
+	<div class="input">
+		<h3>Total reps: ${calcStats.totalReps}</h3>
+	</div>
+	
+	</div>
+	</div>
+	
 	<%@include file="headerAndFooder/footer.jsp" %>
 </body>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
