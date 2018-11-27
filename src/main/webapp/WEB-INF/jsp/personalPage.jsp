@@ -47,7 +47,7 @@
 					<a href="\">
 						<img src="home_icon.png">
 					</a>
-					<a href="\">Home</a>
+					<a href="\">Logout</a>
 				</div>
 				<div class="box">
 					<a href="\food">
@@ -64,7 +64,7 @@
 			</div>
 		
 		</div>
-		<%@include file="headerAndFooder/footer.jsp" %>
+
 	</body>
 
 </html>

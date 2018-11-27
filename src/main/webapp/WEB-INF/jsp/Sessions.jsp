@@ -29,18 +29,18 @@
 	    	
 			<div class="input">
 					<div class="inputBox">
-						<p>Name:</p>
+						<p>Session name:</p>
 						<sf:input path="name" type="text" placeholder="Enter Name"/>
 					</div>
-					<p class="text inputBox">Here you can add the exercise name. Here is a <a href="http://travelstrong.net/bodyweight-exercises/">list of exercises</a></p>
+					<p class="text inputBox">Name your training session</p>
 			</div>
 			
 			<div class="input">
 					<div class="inputBox">
-						<p>Type:</p>
+						<p>Session Type:</p>
 						<sf:input path="type" type="text" placeholder="Enter Type"/>
 					</div>
-					<p class="text inputBox">Text</p>
+					<p class="text inputBox">White type of training is this training session going to cover. Back, running and core strength are some examples</p>
 			</div>
 			
 			<div class="input">
@@ -48,7 +48,7 @@
 						<p>Exercises:</p>
 						<form:select items="${allExercises}" multiple="true" path="exercises" itemLabel = "name" style="width: 300px"/>
 					</div>
-					<p class="text inputBox">Text</p>
+					<p class="text inputBox">Here you can create your session by selecting exercises that you have created</p>
 			</div>
 			
 			<div class="input submit">

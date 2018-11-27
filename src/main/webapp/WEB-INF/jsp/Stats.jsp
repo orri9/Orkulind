@@ -25,8 +25,9 @@
 	<div class="body">
 	<div class="train">
 	
-	<div class="input">
+	
 	<sf:form class="formBox" method="POST" modelAttribute="stats" action="/statistics">
+		<div class="input submit">
 		<table>
 			<tr>
 				<td>
@@ -42,9 +43,12 @@
 				</td>
 			</tr>
 		</table>
+		</div>
+		<div class="input">
 		<input type="submit" VALUE="Get Statistics"/>
+		</div>		
 	</sf:form>
-	</div>
+
 	
 	<div id="chartContainer" style="height: 350px; width: 700px;"></div>
 	

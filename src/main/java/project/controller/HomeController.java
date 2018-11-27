@@ -29,6 +29,10 @@ private UserService userService;
 	@RequestMapping("/")
 	public String HomeViewGet(Model model){
 		model.addAttribute("user", new User());
+		if(User.logedUser != null) {
+			User.logedUser = null;
+		}
+		
 		return "Index";
 	}
 

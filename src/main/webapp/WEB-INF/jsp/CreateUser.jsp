@@ -33,23 +33,22 @@
 				
 				<div class="input">
 				<div class="inputBox">
-					<p>Exercise name: ${villa}</p>
+					<p>User name: ${villa}</p>
 					<sf:input path="name" type="text" placeholder="Enter Name"/>
 				</div>
-				<p class="text inputBox">Here you can add the exercise name. Here is a <a href="http://travelstrong.net/bodyweight-exercises/">list of exercises</a></p>
+				<p class="text inputBox">Create new user name</p>
 				</div>
 				
 				<div class="input">
 				<div class="inputBox">
-					<p>Exercise name: ${villa}</p>
+					<p>Password: ${villa}</p>
 					<sf:input path="password" type="password" placeholder="Enter Type"/>
 				</div>
-				<p class="text inputBox">Here you can add the exercise name. Here is a <a href="http://travelstrong.net/bodyweight-exercises/">list of exercises</a></p>
+				<p class="text inputBox"> Add password for your new user</p>
 				</div>
                 
                 <div class="input submit">
 				<div class="inputBox">
-					<p>Here you can create you exercises when finish.</p>
 			        <input type="submit" VALUE="Create user"/>
 				</div>
 			</div>
