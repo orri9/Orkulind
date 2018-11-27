@@ -29,11 +29,10 @@
 		
 	<sf:form  class="formBox" method="POST" modelAttribute="storeUser" action="/storeUser">
 
-	<p>${creatUser}</p>
 				
 				<div class="input">
 				<div class="inputBox">
-					<p>User name: ${villa}</p>
+					<p>User name: ${villa}${creatUser}</p>
 					<sf:input path="name" type="text" placeholder="Enter Name"/>
 				</div>
 				<p class="text inputBox">Create new user name</p>

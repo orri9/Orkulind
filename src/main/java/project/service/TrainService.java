@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import project.persistence.entities.Exercise;
-import project.persistence.entities.PostitNote;
 import project.persistence.entities.Stats;
 import project.persistence.entities.Training;
 

@@ -21,7 +21,6 @@
 				<h1>Personal Training Page</h1>
 			</div>
 		</div>
-		<p>${logedUser}</p>
 		
 		<div class="body">
 			<div class="container">

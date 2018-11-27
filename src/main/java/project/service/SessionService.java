@@ -2,7 +2,6 @@ package project.service;
 
 import java.util.List;
 
-import project.persistence.entities.PostitNote;
 import project.persistence.entities.Session;
 
 public interface SessionService {

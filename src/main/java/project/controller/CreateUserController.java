@@ -66,7 +66,7 @@ public class CreateUserController  {
         	return "CreateUser";
         }
         
-    	model.addAttribute("creatUser", "New user has bin created");
+    	model.addAttribute("creatUser", "User has been created");
 
         return "CreateUser";
     }

@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import project.persistence.entities.Exercise;
-import project.persistence.entities.PostitNote;
 import project.persistence.entities.Session;
 import project.persistence.entities.Training;
 import project.persistence.entities.TrainingList;
