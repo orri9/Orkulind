@@ -38,7 +38,10 @@
             <tr>
             		<td>Session:</td>
             		<td>
-            			<form:select items="${allSessions}" onchange="this.form.submit()" itemLabel = "name" multiple="false" path="session" style="width: 300px"/>	
+            			<form:select path = "session" onchange="this.form.submit()" multiple="false" style="width: 300px">
+            				<option disabled selected value> -- select a session -- </option>
+            				<form:options items="${allSessions}" itemLabel = "name"/>
+            			</form:select>
 				</td>
             </tr>
             

@@ -66,7 +66,10 @@
            		<tr>
             			<td></td>
             			<td>
-            				<form:select items="${allSessions}" itemLabel = "name" multiple="false" path="id" style="width: 300px"/>
+						<form:select path="id" multiple="false" style="width: 300px">
+            					<option disabled selected value> -- select a session -- </option>
+            					<form:options items="${allSessions}" itemLabel = "name"/>
+            			</form:select>
 					</td>
             		</tr>
             

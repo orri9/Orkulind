@@ -90,7 +90,7 @@ public class TrainController  {
 			training.setDate(date);
 			trainService.save(training);
 		}
-		
+		model.addAttribute("trainings", new TrainingList());
 		
 		// Return the view
 		return "redirect:/personal";

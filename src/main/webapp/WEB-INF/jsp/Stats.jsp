@@ -29,9 +29,12 @@
 	<sf:form class="formBox" method="POST" modelAttribute="stats" action="/statistics">
 		<div class="input submit">
 		<table>
-			<tr>
+			<tr>	
 				<td>
-					<form:select items="${allExercises}" itemLabel = "name" multiple="false" path="exercise"/>
+					<form:select path="exercise" multiple="false">
+            				<option disabled selected value> -- select an exercise -- </option>
+            				<form:options items="${allExercises}" itemLabel = "name"/>
+            			</form:select>
 				</td>
 			</tr>
 			<tr>
