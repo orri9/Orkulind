@@ -24,7 +24,7 @@
 	<div class="train">
 		
 		<div class="input submit">
-				<a href="/" class="text inputBox">Heim</a>
+				<a href="/" class="text inputBox blackText">Heim</a>
 		</div>
 		
 	<sf:form  class="formBox" method="POST" modelAttribute="storeUser" action="/storeUser">

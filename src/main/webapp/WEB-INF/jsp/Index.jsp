@@ -57,7 +57,7 @@
 			
 		    <div class="box">
 		    	<p>${villa}</p>
-		    	<a href="/createUser">Create User</a>
+		    	<a class="blackText" href="/createUser">Create User</a>
 		    </div>
 			
 		</div>
