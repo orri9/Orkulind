@@ -223,7 +223,7 @@
             <br />
             <br />
 
-        <sf:form method="POST" modelAttribute="Food" action="/postfood">
+        <sf:form method="GET" modelAttribute="Food" action="/food">
             <div class="header">
 			    <div class="headBox">
 		  		    <h5>Enter How Many Calories:</h5>   
