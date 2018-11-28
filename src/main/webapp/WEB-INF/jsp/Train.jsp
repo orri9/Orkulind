@@ -16,6 +16,7 @@
     	<link rel="stylesheet" type="text/css" href="<c:url value="/css/styleIndex.css"/>"/>
     	<link rel="stylesheet" type="text/css" href="<c:url value="/css/header.css"/>"/>
     	<link rel="stylesheet" type="text/css" href="<c:url value="/css/footer.css"/>"/>
+    	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
 	

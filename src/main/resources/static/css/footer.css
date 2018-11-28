@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
 .footer {
 	width: 100%;
 }

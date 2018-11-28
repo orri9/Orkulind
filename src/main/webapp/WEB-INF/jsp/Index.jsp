@@ -11,6 +11,7 @@
     	<link rel="stylesheet" type="text/css" href="<c:url value="/css/styleIndex.css"/>"/>
     	<link rel="stylesheet" type="text/css" href="<c:url value="/css/header.css"/>"/>
     	<link rel="stylesheet" type="text/css" href="<c:url value="/css/footer.css"/>"/>
+    	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <title>Project Title</title>
     </head>
     <body>
@@ -25,6 +26,7 @@
 			<img class="logo" src="logo_icon.png">
 		</div>
 		
+		
 		<div class="textBox">
 			<p class="text border">
 				Orkulind is a website with ways to refine your lifestyle, fitness and diet. We help people change what needs to be changed to gain 
@@ -33,7 +35,6 @@
 			</p>
 		</div>
 
-		
 		<div class=header>
 		<div class="loginBox">
 			
