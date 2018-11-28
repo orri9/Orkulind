@@ -20,13 +20,11 @@
 	    <%@include file="headerAndFooder/header.jsp" %>
 		</div>
 	</div>
-	<div class="homePage">
-	<div >
-		<div class="textBox icon>
-				<img src="logo_icon.png">
-			
+		 
+		<div class="body">
+			<img class="logo" src="logo_icon.png">
 		</div>
-
+		
 		<div class="textBox">
 			<p class="text border">
 				Orkulind is a website with ways to refine your lifestyle, fitness and diet. We help people change what needs to be changed to gain 
@@ -34,6 +32,7 @@
 				complex world of healthcare industry, bringing it to its customers in the simplest and most understandable way.
 			</p>
 		</div>
+
 		
 		<div class=header>
 		<div class="loginBox">
@@ -56,7 +55,6 @@
 		        <input type="submit" VALUE="Login"/>
 		    </sf:form>
 		    
-			
 		    <div class="box">
 		    	<p>${villa}</p>
 		    	<a class="blackText" href="/createUser">Create User</a>
@@ -64,9 +62,7 @@
 			
 		</div>
 		</div>
-			    
-	</div>
-	</div>
+			
     </body>
     
 </html>

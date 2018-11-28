@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.logo {
+	width: 25%;
+	height: 25%;
+	padding: 10px;
+}
+
 .homePage {
 	display:flex;
 	width: auto;

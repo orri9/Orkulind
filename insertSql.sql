@@ -1,4 +1,8 @@
 
+/*
+sudo -u postgres psql -d hbv -a -f insertSql.sql
+*/
+
 insert into exercise (info, name, rep_type, reps, type, userid, id) 
 values (
     '<iframe width="560" height="315" src="https://www.youtube.com/embed/IODxDxX7oi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',

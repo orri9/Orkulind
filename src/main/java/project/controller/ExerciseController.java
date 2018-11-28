@@ -45,8 +45,8 @@ public class ExerciseController {
         return "redirect:/exercises";
     }
     
-    // Notkun: user.checkString(s)
-    // Fyrir: User user, String s
+    // Notkun: checkString(s)
+    // Fyrir:  String s
     // Eftir: Ath hvort að Strengur sé bara whitespace eða hvort strengur sé tómur
     public static boolean checkString(String s) {
     	
