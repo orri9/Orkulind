@@ -1,5 +1,4 @@
 
-
 package project.controller;
 
 import java.beans.PropertyEditorSupport;
@@ -29,44 +28,49 @@ import project.service.ExerciseService;
 import project.service.SessionService;
 import project.service.TrainService;
 
-/**
- * Small controller just to show that you can have multiple controllers
- * in your project
- */
 @Controller
-@RequestMapping("/") // Notice here that the Request Mapping is set at the Class level
 @SessionAttributes({"training", "trainings"})
 public class TrainController  {
 
+	// Instance Variables
 	private TrainService trainService;
 	private SessionService sessionService;
 
+	// Dependency Injection
 	@Autowired
     public TrainController(TrainService trainService, SessionService sessionService) {
         this.trainService = trainService;
         this.sessionService = sessionService;
     }
   
+	// Handles the GET request for the URL \train and returns the corresponding view
 	@RequestMapping(value = "/train", method = RequestMethod.GET)
     public String trainGetView(Model model){
-
+		
+		// Adds a training attribute to the model
 		model.addAttribute("training",new Training());
 		
+		// Adds all user's sessions to the model 
 		List<Session> sessions = sessionService.findAllUserSessions(User.logedUser.getId());
         model.addAttribute("allSessions", sessions);
-        return "Train"; // this returns a .jsp file with the path /webapp/WEB-INF/jsp/demo/demo.jsp
+        
+        // Returns the Train.jsp view
+        return "Train";
     }
 	
+	// Handles the POST request for the URL \train, 
+	// receives the training attribute from the model and returns the view.
 	@RequestMapping(value = "/train", method = RequestMethod.POST)
-	public String trainViewPost(@ModelAttribute("training") Training training,
-            Model model){
+	public String trainViewPost(@ModelAttribute("training") Training training, Model model){
 		
-		
+		// Adds all user's sessions to the model 
 		List<Session> sessions = sessionService.findAllUserSessions(User.logedUser.getId());
         model.addAttribute("allSessions", sessions);
-		
+        
 		TrainingList trainings = new TrainingList();
 		int i = 0;
+		// The training attribute now contains a session with exercises.
+		// We add a Training object to the list trainings for each exercise in the training session.
 		for(Exercise e: training.getSession().getExercises()) {
 			trainings.add(new Training());
 			trainings.get(i).setExercise(e);
@@ -74,6 +78,7 @@ public class TrainController  {
 			i++;
 		}
 		
+		// Adds the trainings list to the model
 		model.addAttribute("trainings", trainings);
 		
 		
@@ -81,10 +86,12 @@ public class TrainController  {
 		return "Train";
 	}
 	
+	// Handles the POST request for the URL \finishTraining,
+	// receives the trainings attribute from the model and redirects to /personal.
 	@RequestMapping(value = "/finishTraining", method = RequestMethod.POST)
-	public String finishTrainingViewPost(@ModelAttribute("trainings") TrainingList trainings,
-            Model model){
+	public String finishTrainingViewPost(@ModelAttribute("trainings") TrainingList trainings, Model model){
 		
+		// Saves all trainings to the database with the current date
 		Date date = new Date();
 		for(Training training: trainings.getTrainingList()) {
 			training.setDate(date);
@@ -92,10 +99,12 @@ public class TrainController  {
 		}
 		model.addAttribute("trainings", new TrainingList());
 		
-		// Return the view
+		// Redirect to /personal
 		return "redirect:/personal";
 	}
 	
+	// Method for binding the ${training.session} attribute to a Session object
+	// that is retrieved from the database
 	@InitBinder     
     public void initBinder(WebDataBinder binder){
     		binder.registerCustomEditor(Session.class, "session", new PropertyEditorSupport() {
