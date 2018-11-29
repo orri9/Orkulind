@@ -7,9 +7,10 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Session")
+@Table(name = "Session") // Table for the database
 public class Session {
 
+	// Private variables
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -18,16 +19,22 @@ public class Session {
     private String type;
     private int userID;
     
+    // Many to many relationship with exercises
+    // A session contains a set of exercises
     @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable
     private Set<Exercise> exercises;
     
+    // One to many relationship with  trainings
+    // A session contains a set of trainings
     @OneToMany(mappedBy="session", cascade = CascadeType.REMOVE)
     private Set<Training> trainings;
 
+    // Empty Constructor
     public Session() {
     }
 
+    // Constructor
     public Session(int id, String name, String type, int userID, Set<Training> trainings, Set<Exercise> exercises) {
     		this.id = id;
     		this.name = name;
@@ -37,6 +44,8 @@ public class Session {
         this.trainings = trainings;
     }
     
+    // Before removing an session from the database it
+    // needs to be removed from all exercises it belongs to
     @PreRemove
     public void removeSessionFromExercises() {
         for (Exercise e : exercises) {
@@ -44,11 +53,14 @@ public class Session {
         }
     }
     
+    // Add exercise
     public void addExercise(Exercise exercise) {
     		if (exercises == null) exercises = new HashSet<Exercise>(){{ add(exercise);}};
     		else exercises.add(exercise);
     }
 
+    // Getters & setters
+    
 	public int getId() {
 		return id;
 	}

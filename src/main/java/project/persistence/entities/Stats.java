@@ -10,20 +10,26 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 
 public class Stats {
+	
+	// Private variables
+	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDate;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
-    private Exercise exercise;
+    
+	private Exercise exercise;
     private List<Training> trainings;
     
     private Double totalReps;
     private Double averageReps;
     private List<List<Map<Object,Object>>> dataPoints = new ArrayList<List<Map<Object,Object>>>();
 
+    // Empty constructor
     public Stats() {
     }
 
+    // Constructor
     public Stats(Date startDate, Date endDate, Exercise exercise, List<Training> trainings) {
     		this.startDate = startDate;
     		this.endDate = endDate;
@@ -31,16 +37,19 @@ public class Stats {
     		this.trainings = trainings;
     }
     
+    // Calculates all
     public void calculate() {
     		calculateTotalReps();
     		calculateAverageReps();
     		calculateDataPoints();
 	}
     
+    // Average reps
     public void calculateAverageReps() {
 		averageReps = totalReps/trainings.size();
 	}  
 	
+    // Total reps
 	public void calculateTotalReps() {
 		Double sumReps = 0.0;
 		for(Training t : trainings) {
@@ -49,6 +58,8 @@ public class Stats {
 		totalReps = sumReps;
 	}   
     
+	// Data points for the progress chart in statistics
+	// Each point consists of date and rep count
 	public void calculateDataPoints() {
 		Map<Object,Object> map = null;
 		List<Map<Object,Object>> points = new ArrayList<Map<Object,Object>>();

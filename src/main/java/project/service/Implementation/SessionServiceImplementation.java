@@ -50,17 +50,17 @@ public class SessionServiceImplementation implements SessionService {
 
     @Override 
     public Session findSession(int id) {
-        return repository.findSession(id);
+        return repository.findOne(id);
     }
 
     @Override
     public List<Session> findSessionByName(String name) {
-        return repository.findSessionByName(name);
+        return repository.findByName(name);
     }
 
 	@Override
 	public List<Session> findSessionByType(String type) {
-		return repository.findSessionByType(type);
+		return repository.findByType(type);
 	}
 
 	@Override

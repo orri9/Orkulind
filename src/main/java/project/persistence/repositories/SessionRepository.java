@@ -13,17 +13,14 @@ public interface SessionRepository extends JpaRepository<Session, Long> {
 
     void delete(Session session);
 
-    
     List<Session> findAll();
 
     @Query(value = "SELECT p FROM Session p WHERE p.id = ?1")
-    Session findSession(int id);
+    Session findOne(int id);
 
-    @Query(value = "SELECT p FROM Session p WHERE p.name = ?1")
-    List<Session> findSessionByName(String name);
+    List<Session> findByName(String name);
     
-    @Query(value = "SELECT p FROM Session p WHERE p.type = ?1")
-    List<Session> findSessionByType(String type);
+    List<Session> findByType(String type);
 
     @Query(value = "SELECT p FROM Session p WHERE p.userID = ?1 OR p.userID = 0")
 	List<Session> findAllUserSessions(int id);

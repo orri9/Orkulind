@@ -19,7 +19,7 @@ public interface TrainRepository extends JpaRepository<Training, Long> {
     List<Training> findAll();
 
     @Query(value = "SELECT p FROM Training p WHERE p.id = ?1")
-    Training findTraining(int id);
+    Training findOne(int id);
 
     @Query(value = "SELECT p FROM Training p WHERE p.exercise = ?1 AND p.date BETWEEN ?2 AND ?3")
     List<Training> findTrainingsByFilter(Exercise exercise, Date startDate, Date endDate); 

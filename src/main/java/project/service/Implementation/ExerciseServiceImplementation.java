@@ -47,17 +47,17 @@ public class ExerciseServiceImplementation implements ExerciseService {
 
     @Override 
     public Exercise findExercise(int id) {
-        return repository.findExercise(id);
+        return repository.findOne(id);
     }
 
     @Override
     public List<Exercise> findExerciseByName(String name) {
-        return repository.findExerciseByName(name);
+        return repository.findByName(name);
     }
 
 	@Override
 	public List<Exercise> findExerciseByType(String type) {
-		return repository.findExerciseByType(type);
+		return repository.findByType(type);
 	}
 
 	@Override

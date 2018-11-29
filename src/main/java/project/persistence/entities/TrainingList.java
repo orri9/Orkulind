@@ -3,10 +3,13 @@ package project.persistence.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+// List for Training objects
 public class TrainingList {
 
+	// Private variables
     private List<Training> trainingList;
 
+    // Empty Constructor
     public TrainingList() {
     		trainingList = new ArrayList<Training>();
     }

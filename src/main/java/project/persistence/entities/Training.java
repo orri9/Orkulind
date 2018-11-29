@@ -10,29 +10,34 @@ import org.hibernate.annotations.OnDeleteAction;
 
 
 @Entity
-@Table(name = "Training")
+@Table(name = "Training") // Table in database
 public class Training {
 
+	// Private variables
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     
+	// Many to one relationship with session
+	// training contains a single session
 	@ManyToOne
     @JoinColumn(name="session_id", nullable=false)
 	private Session session;
 	
-	private Date date;
-	
+	// Many to one relationship with exercise
+	// training contains a single exercise
 	@ManyToOne
     @JoinColumn(name="exercise_id", nullable=false)
 	private Exercise exercise;
 	
+	private Date date;
 	private int reps;
 
-	
+	// Empty Constructor
     public Training() {
     }
 
+    // Constructor
     public Training(int id, Session session, Date date, Exercise exercise, int reps) {
     		this.id = id;
     		this.session = session;
@@ -40,6 +45,9 @@ public class Training {
     		this.exercise = exercise;
     		this.reps = reps;
     }
+    
+    
+    // Getters & Setters
     
 	public int getId() {
 		return id;

@@ -6,9 +6,10 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Exercise")
+@Table(name = "Exercise") // Table for the database
 public class Exercise {
 
+	// Private variables
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -20,15 +21,21 @@ public class Exercise {
     private String info;
     private int userID;
     
+    // Many to many relationship with sessions
+    // An exercise contains a set of sessions
     @ManyToMany(mappedBy = "exercises")
     private Set<Session> sessions;
     
+    // One to many relationship with  trainings
+    // An exercise contains a set of trainings
     @OneToMany(mappedBy="exercise", cascade = CascadeType.REMOVE)
     private Set<Training> trainings;
 
+    // Empty constructor
     public Exercise() {
     }
 
+    // Constructor
     public Exercise(int id, String name, String type, int reps, String repType, String info, int userID, Set<Session> sessions) {
     		this.id = id;
     		this.name = name;
@@ -40,17 +47,22 @@ public class Exercise {
         this.sessions = sessions;
     }
     
+    // Add session to the set of sessions
     public void addSession(Session session) {
     		if (sessions == null) sessions = new HashSet<Session>(){{ add(session);}};
 		this.sessions.add(session);
     }
     
+    // Before removing an exercise from the database it
+    // needs to be removed from all sessions it belongs to
     @PreRemove
     public void removeExerciseFromSessions() {
         for (Session s : sessions) {
             s.getExercises().remove(this);
         }
     }
+    
+    // Getters & Setters
 
 	public int getId() {
 		return id;
