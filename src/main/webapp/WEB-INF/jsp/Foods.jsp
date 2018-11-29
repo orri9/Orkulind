@@ -139,7 +139,7 @@
 
         </c:otherwise>
     </c:choose>             
-    <br />
+
     <div class="header">
 			<div class="headBox">
 		  			<h2>Make Your Own Diet Program:</h2>   
@@ -178,68 +178,6 @@
         
     </sf:form>
 
-    <br />
-        <div class="header">
-			<div class="headBox">
-		  			<h2>Input Your your calorie intake here:</h2>   
-			</div>
-    </div>   
-    
-    <%-- This is for the user to enter what he ate --%>
-        <br/>
-        <div class="header">
-			<div class="headBox">
-		  		<h5>Input What Diet:</h5>   
-			</div>
-        </div>
-    	<select name="diet list" form="dietform">
- 		<option value="the zone diet">The Zone Diet</option>
-		<option value="The Atkins diet">The Atkins diet</option>
-  		<option value="Mediterranean diet">Mediterranean diet</option>
-        <option value="Raw food diet">Raw food diet</option>
-        <option value="South Beach diet">South Beach diet</option>
-		<option value="Vegan diet">Vegan diet</option>
-  		<option value="Vegetarian diet">Vegetarian diet</option>
-  		<option value="Ketogenic diet">Ketogenic diet</option>
-        </select>
-
-        <div class="header">
-			<div class="headBox">
-		  		<h5>Input what meal of the day this was:</h5>   
-			</div>
-        </div>
-	 	<select name="meal of the day" form="mealform">
- 		<option value="breakfast">breakfast</option>
-		<option value="Second breakfast">Second breakfast</option>
-  		<option value="Brunch">Brunch</option>
-        <option value="Elevenses">Elevenses</option>
-        <option value="Lunch">Lunch</option>
-		<option value="Tea time">Tea time</option>
-  		<option value="Linner">Linner</option>
-        <option value="Supper">Supper</option>
-        <option value="Dinner">Dinner</option>
-  		<option value="After dinner snack">After dinner snack</option>
-        </select>
-
-            <br />
-            <br />
-
-        <sf:form method="GET" modelAttribute="Food" action="/food">
-            <div class="header">
-			    <div class="headBox">
-		  		    <h5>Enter How Many Calories:</h5>   
-			    </div>
-            </div>
-
-            <td><sf:input path="name" type="text" placeholder="Enter Calories"/></td>
-            <div class="input submit">
-			    <div class="inputBox">
-		            <p>Here you can submit your Meal:</p>
-			        <input type="submit" VALUE="Submit meal"/>
-				</div>
-            </div>  
-        </sf:form>
-        
         <%@include file="headerAndFooder/footer.jsp" %>
 
     </body>
