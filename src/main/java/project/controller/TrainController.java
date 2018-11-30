@@ -2,12 +2,8 @@
 package project.controller;
 
 import java.beans.PropertyEditorSupport;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +20,6 @@ import project.persistence.entities.Session;
 import project.persistence.entities.Training;
 import project.persistence.entities.TrainingList;
 import project.persistence.entities.User;
-import project.service.ExerciseService;
 import project.service.SessionService;
 import project.service.TrainService;
 

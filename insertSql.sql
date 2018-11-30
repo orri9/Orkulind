@@ -1,6 +1,14 @@
 
 /*
+Er notað fyrir ubuntu
 sudo -u postgres psql -d hbv -a -f insertSql.sql
+*/
+
+/*
+*   Prófunar gögn
+*   Hér þarf first að búa til notanda og bæta við notenda id fyrir öll userid þar sem á við.
+*   Síðan þarf að búa til einn session, nota id fyrir þann session og setja inn fyrir öll session_id
+*   síðan er hægt að nota þetta skjal til þessa að bæta við gögnum við viðeigandi töflur
 */
 
 insert into exercise (info, name, rep_type, reps, type, userid, id) 
@@ -53,7 +61,7 @@ values (
     '2018-11-20 14:07:46.394',
     1000, 
     11, 
-    74, 
+    90, 
     1007
 );
 
@@ -62,7 +70,7 @@ values (
     '2018-11-22 14:07:46.394',
     1000, 
     13, 
-    74, 
+    90, 
     1006
 );
 
@@ -71,7 +79,7 @@ values (
     '2018-11-24 14:07:46.394',
     1000, 
     15, 
-    74, 
+    90, 
     1005
 );
 
@@ -80,7 +88,7 @@ values (
     '2018-11-25 14:07:46.394',
     1000, 
     11, 
-    74, 
+    90, 
     1004
 );
 

@@ -12,8 +12,13 @@ import project.service.UserService;
 @Controller
 public class HomeController {
 
+/**
+ * 	Documentation for HomeController:
+	 	This controller handles the starting page Index.jps
+	 	and the user login
+ */
 	
-private UserService userService;
+	private UserService userService;
 	
 	
 	public HomeController() {
@@ -26,6 +31,11 @@ private UserService userService;
 		this.userService = userService;
 	}
 	
+	/*
+	 * 	Usage: 	Get request on "/" 
+	 * 	Before:	
+	 * 	After: 	returns Index.jsp to view and logs out user if he is loge'd in
+	 */
 	@RequestMapping("/")
 	public String HomeViewGet(Model model){
 		model.addAttribute("user", new User());
@@ -35,16 +45,26 @@ private UserService userService;
 		
 		return "Index";
 	}
-
+	
+	/*
+	 * Usage:	Post request on "/log"
+	 * Before:
+	 * After: 	from the post the user has name and password
+	 * 			then it validates weather the user exist in db with correct password
+	 * 			if so
+	 * 				the user is logged in and "personalPage" is returned
+	 * 			else
+	 * 				"Index" is returned with model that contains error messages
+	 */
 	@RequestMapping(value = "/log", method = RequestMethod.POST)
 	public String exerciseViewPost(@ModelAttribute("user") User user,
 	                                 Model model){
 		
-		User.logedUser = userService.existUser(user);
+		User.logedUser = userService.existUserAndPassword(user);
 		if(User.logedUser == null) {
 			model.addAttribute("villa", "Username or password is incorrect");
 			return "Index"; 
-		} 
+		}
 		
 		model.addAttribute("logedUser", "User: " + User.logedUser.getName() + " , id: " + User.logedUser.getId() );
 	    return "personalPage";
