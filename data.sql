@@ -6,7 +6,6 @@ From the psql prompt:
 \i [full path]/data.sql
 */
 
-
 insert into username (id, name, password)
 values (
 	1000,
