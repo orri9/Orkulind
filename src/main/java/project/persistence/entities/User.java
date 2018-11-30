@@ -24,14 +24,6 @@ public class User {
     	this.password = password;
     }
     
-    
-    @Override
-    public String toString() {
-        return String.format(
-                "Postit Note[name=%s, note=%s]",
-                id, name);
-    }
-    
     public String getName() {
 		return name;
 	}
