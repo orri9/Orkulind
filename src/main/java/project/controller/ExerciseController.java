@@ -8,6 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import project.persistence.entities.User;
 import project.persistence.entities.Exercise;
 import project.service.ExerciseService;
@@ -37,6 +41,12 @@ public class ExerciseController {
 
         // Returns the Exercises.jsp view
         return "Exercises";
+    }
+    
+    @RequestMapping(value = "/api/exercises", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Exercise> getExercises() {
+    		return exerciseService.findAllExercises();
     }
     
     // Handles the POST request for the URL \removeExercise,
