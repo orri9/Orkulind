@@ -31,7 +31,7 @@ public class Exercise {
     
     // One to many relationship with  trainings
     // An exercise contains a set of trainings
-    @JsonIgnore
+    @JsonIgnore 
     @OneToMany(mappedBy="exercise", cascade = CascadeType.REMOVE)
     private Set<Training> trainings;
 
