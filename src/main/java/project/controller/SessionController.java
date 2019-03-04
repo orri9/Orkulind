@@ -1,6 +1,7 @@
 package project.controller;
 
 import java.beans.PropertyEditorSupport;
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import project.persistence.entities.Exercise;
 import project.persistence.entities.Session;
@@ -96,6 +100,29 @@ public class SessionController {
                 setValue(type);
             }
         });  
+    }
+    
+    @PostMapping("/api/session")
+    //@RequestMapping(value = "/api/session", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Session> getSessionss(@RequestBody String jsonUser) {
+    	ObjectMapper mapper = new ObjectMapper();
+        User user = null;
+        JsonNode jsonNode = null;
+        try {
+			jsonNode = mapper.readTree(jsonUser);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+        String userString = jsonNode.get("user").asText();
+        
+        try {
+            user = mapper.readValue(userString, User.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+    		return sessionService.findAllUserSessions(user.getId());
     }
     
 }
