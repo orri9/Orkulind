@@ -49,10 +49,10 @@ public class ExerciseController {
         return "Exercises";
     }
     
+    //Find all user exercises
     @PostMapping("/api/exercises")
     @ResponseBody
-    public List<Exercise> getExercises(@RequestBody User user) {
-    		
+    public List<Exercise> getExercises(@RequestBody User user) {   		
     		return exerciseService.findAllUserExercises(user.getId());
     }
     
