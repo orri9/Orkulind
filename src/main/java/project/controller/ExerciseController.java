@@ -48,33 +48,11 @@ public class ExerciseController {
         // Returns the Exercises.jsp view
         return "Exercises";
     }
-    /*
-    @RequestMapping(value = "/api/exercises", method = RequestMethod.GET)
-    @ResponseBody
-    public List<Exercise> getExercises() {
-    		return exerciseService.findAllExercises();
-    }
-    */
+    
     @PostMapping("/api/exercises")
-    //@RequestMapping(value = "/api/exercises", method = RequestMethod.POST)
     @ResponseBody
-    public List<Exercise> getExercises(@RequestBody String jsonUser) {
-    		ObjectMapper mapper = new ObjectMapper();
-        User user = null;
-        JsonNode jsonNode = null;
-        try {
-			jsonNode = mapper.readTree(jsonUser);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-        String userString = jsonNode.get("user").asText();
-        
-        try {
-            user = mapper.readValue(userString, User.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
+    public List<Exercise> getExercises(@RequestBody User user) {
+    		
     		return exerciseService.findAllUserExercises(user.getId());
     }
     
