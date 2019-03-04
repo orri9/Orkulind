@@ -1,16 +1,22 @@
 package project.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import project.persistence.entities.User;
 import project.persistence.entities.Exercise;
@@ -42,11 +48,34 @@ public class ExerciseController {
         // Returns the Exercises.jsp view
         return "Exercises";
     }
-    
+    /*
     @RequestMapping(value = "/api/exercises", method = RequestMethod.GET)
     @ResponseBody
     public List<Exercise> getExercises() {
     		return exerciseService.findAllExercises();
+    }
+    */
+    @PostMapping("/api/exercises")
+    //@RequestMapping(value = "/api/exercises", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Exercise> getExercises(@RequestBody String jsonUser) {
+    		ObjectMapper mapper = new ObjectMapper();
+        User user = null;
+        JsonNode jsonNode = null;
+        try {
+			jsonNode = mapper.readTree(jsonUser);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+        String userString = jsonNode.get("user").asText();
+        
+        try {
+            user = mapper.readValue(userString, User.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+    		return exerciseService.findAllUserExercises(user.getId());
     }
     
     // Handles the POST request for the URL \removeExercise,
