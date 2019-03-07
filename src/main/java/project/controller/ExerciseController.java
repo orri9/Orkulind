@@ -56,6 +56,19 @@ public class ExerciseController {
     		return exerciseService.findAllUserExercises(user.getId());
     }
     
+    //Remove Exercise
+    @PostMapping("/api/removeExercise")
+    public void removeExercise(@RequestBody Exercise exercise) {   		
+    		exercise = exerciseService.findExercise(exercise.getId());
+		exerciseService.delete(exercise);
+    }
+    
+    //Create Exercise
+    @PostMapping("/api/createExercise")
+    public void createExercise(@RequestBody Exercise exercise) {   		
+    		exerciseService.save(exercise);
+    }
+    
     // Handles the POST request for the URL \removeExercise,
     // receives the exercise attribute to remove from the model and redirects to /exercises
     @RequestMapping(value = "/removeExercise", method = RequestMethod.POST)
