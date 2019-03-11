@@ -1,13 +1,23 @@
 package project.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import project.persistence.entities.User;
 import project.persistence.entities.Exercise;
 import project.service.ExerciseService;
@@ -37,6 +47,26 @@ public class ExerciseController {
 
         // Returns the Exercises.jsp view
         return "Exercises";
+    }
+    
+    //Find all user exercises
+    @PostMapping("/api/exercises")
+    @ResponseBody
+    public List<Exercise> getExercises(@RequestBody User user) {   		
+    		return exerciseService.findAllUserExercises(user.getId());
+    }
+    
+    //Remove Exercise
+    @PostMapping("/api/removeExercise")
+    public void removeExercise(@RequestBody Exercise exercise) {   		
+    		exercise = exerciseService.findExercise(exercise.getId());
+		exerciseService.delete(exercise);
+    }
+    
+    //Create Exercise
+    @PostMapping("/api/createExercise")
+    public void createExercise(@RequestBody Exercise exercise) {   		
+    		exerciseService.save(exercise);
     }
     
     // Handles the POST request for the URL \removeExercise,

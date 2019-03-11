@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "Exercise") // Table for the database
 public class Exercise {
@@ -23,11 +25,13 @@ public class Exercise {
     
     // Many to many relationship with sessions
     // An exercise contains a set of sessions
+    @JsonIgnore
     @ManyToMany(mappedBy = "exercises")
     private Set<Session> sessions;
     
     // One to many relationship with  trainings
     // An exercise contains a set of trainings
+    @JsonIgnore
     @OneToMany(mappedBy="exercise", cascade = CascadeType.REMOVE)
     private Set<Training> trainings;
 
