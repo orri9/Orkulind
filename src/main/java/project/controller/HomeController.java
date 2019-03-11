@@ -4,8 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import project.persistence.entities.User;
 import project.service.UserService;
 
@@ -45,6 +48,19 @@ public class HomeController {
 		
 		return "Index";
 	}
+	
+	@RequestMapping(value = "/login/api" , method = RequestMethod.POST)
+    public @ResponseBody User login(@RequestBody User user) {
+    	
+		User.logedUser = userService.existUserAndPassword(user);
+		if(User.logedUser == null) {
+			user.setError("Username or password is incorrect");
+			return user; 
+		}
+		
+		user.setError("");
+    	return user;
+    }
 	
 	/*
 	 * Usage:	Post request on "/log"

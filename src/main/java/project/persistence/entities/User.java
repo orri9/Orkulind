@@ -13,15 +13,17 @@ public class User {
     private int id;
     private String name;
     private String password;
+    private String error;
     public static User logedUser;
     
     public User() {
     	
     }
     
-    public User(String name, String password) {
+    public User(String name, String password, String error) {
     	this.name = name;
     	this.password = password;
+    	this.error = error;
     }
     
     public String getName() {
@@ -46,6 +48,14 @@ public class User {
     
     public String getPassword() {
     	return password;
+    }
+    
+    public void setError(String msg) {
+    	this.error = msg;
+    }
+    
+    public String getError() {
+    	return error;
     }
     
 
