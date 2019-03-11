@@ -51,6 +51,14 @@ public class SessionController {
         // Returns the Session.jsp view
         return "Sessions";
     }
+    
+  //Find all user exercises
+    @PostMapping("/api/sessions")
+    @ResponseBody
+    public List<Session> getSessions(@RequestBody User user) {
+    		
+    		return sessionService.findAllUserSessions(user.getId());
+    }
 
     // Handles the POST request for the URL \sessions,
     // receives the session attribute from the model and returns the corresponding view
