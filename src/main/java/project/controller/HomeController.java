@@ -58,8 +58,8 @@ public class HomeController {
 			return user; 
 		}
 		
-		user.setError("");
-    	return user;
+		User.logedUser.setError("");
+    	return User.logedUser;
     }
 	
 	/*
