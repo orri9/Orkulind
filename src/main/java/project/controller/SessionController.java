@@ -52,12 +52,25 @@ public class SessionController {
         return "Sessions";
     }
     
-  //Find all user exercises
+    //Find all user sessions
     @PostMapping("/api/sessions")
     @ResponseBody
     public List<Session> getSessions(@RequestBody User user) {
-    		
     		return sessionService.findAllUserSessions(user.getId());
+    }
+    
+    //Remove Session
+    @PostMapping("/api/removeSession")
+    public void removeSession(@RequestBody Session session) {   		
+    		//session = sessionService.findSession(session.getId());
+		sessionService.delete(session);
+    }
+    
+    //Create Session
+    @PostMapping("/api/createSession")
+    public void createSession(@RequestBody Session session) {  
+    		//Eyðir ekki tengslum í session_exercise ef æfingum er breytt
+    		sessionService.save(session);
     }
 
     // Handles the POST request for the URL \sessions,
@@ -108,29 +121,6 @@ public class SessionController {
                 setValue(type);
             }
         });  
-    }
-    
-    @PostMapping("/api/session")
-    //@RequestMapping(value = "/api/session", method = RequestMethod.POST)
-    @ResponseBody
-    public List<Session> getSessionss(@RequestBody String jsonUser) {
-    	ObjectMapper mapper = new ObjectMapper();
-        User user = null;
-        JsonNode jsonNode = null;
-        try {
-			jsonNode = mapper.readTree(jsonUser);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-        String userString = jsonNode.get("user").asText();
-        
-        try {
-            user = mapper.readValue(userString, User.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-    		return sessionService.findAllUserSessions(user.getId());
     }
     
 }
