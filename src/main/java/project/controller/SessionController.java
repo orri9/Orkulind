@@ -68,8 +68,7 @@ public class SessionController {
     
     //Create Session
     @PostMapping("/api/createSession")
-    public void createSession(@RequestBody Session session) {  
-    		//Eyðir ekki tengslum í session_exercise ef æfingum er breytt
+    public void createSession(@RequestBody Session session) {
     		sessionService.save(session);
     }
 
