@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -97,6 +99,13 @@ public class TrainController  {
 		// Redirect to /personal
 		return "redirect:/personal";
 	}
+	
+	@PostMapping("/api/finishTraining")
+    public void finishTraining(@RequestBody List<Training> trainings) {
+		for(Training training: trainings) {
+			trainService.save(training);
+		}	
+    }
 	
 	// Method for binding the ${training.session} attribute to a Session object
 	// that is retrieved from the database
