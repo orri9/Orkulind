@@ -101,10 +101,8 @@ public class TrainController  {
 	}
 	
 	@PostMapping("/api/finishTraining")
-    public void finishTraining(@RequestBody List<Training> trainings) {
-		for(Training training: trainings) {
-			trainService.save(training);
-		}	
+    public void finishTraining(@RequestBody Training training) {
+		trainService.save(training);
     }
 	
 	// Method for binding the ${training.session} attribute to a Session object
