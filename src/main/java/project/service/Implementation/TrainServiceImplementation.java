@@ -9,6 +9,7 @@ import project.persistence.repositories.TrainRepository;
 import project.service.TrainService;
 
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -36,5 +37,22 @@ public class TrainServiceImplementation implements TrainService {
 	@Override
 	public List<Training> findTrainingsByFilter(Stats stats) {
 		return repository.findTrainingsByFilter(stats.getExercise(), stats.getStartDate(), stats.getEndDate());
+	}
+
+	@Override
+	public List<Training> findAll() {
+		return repository.findAll();
+	}
+	
+	@Override
+	public List<Training> findAllUserTraining(int id) {
+		return repository.findAll();
+	}
+
+	@Override
+	public List<Training> findTrainingsByFilterApi(Exercise exercise , Date startDate, Date endDate) {
+		// TODO Auto-generated method stub
+		
+		return repository.findTrainingsByFilterApi(exercise, startDate, endDate);
 	}
 }

@@ -18,6 +18,10 @@ public class Stats {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
     
+	private String dateEnd;
+	private String dateStart;
+	private int userId;
+	
 	private Exercise exercise;
     private List<Training> trainings;
     
@@ -37,7 +41,18 @@ public class Stats {
     		this.trainings = trainings;
     }
     
-    // Calculates all
+    public Stats(Date startDate, Date endDate) {
+		this.startDate = startDate;
+		this.endDate = endDate;
+    }
+    
+    public Stats(Exercise exercise2, Date startDate2, Date endDate2) {
+		this.exercise = exercise2;
+		this.startDate = startDate2;
+		this.endDate = endDate2;
+	}
+
+	// Calculates all
     public void calculate() {
     		calculateTotalReps();
     		calculateAverageReps();
@@ -128,6 +143,30 @@ public class Stats {
 
 	public void setDataPoints(List<List<Map<Object, Object>>> dataPoints) {
 		this.dataPoints = dataPoints;
+	}
+
+	public String getDateEnd() {
+		return dateEnd;
+	}
+
+	public void setDateEnd(String dateEnd) {
+		this.dateEnd = dateEnd;
+	}
+
+	public String getDateStart() {
+		return dateStart;
+	}
+
+	public void setDateStart(String dateStart) {
+		this.dateStart = dateStart;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
     
     
