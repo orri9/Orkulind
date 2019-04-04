@@ -1,5 +1,6 @@
 package project.persistence.entities;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -7,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 public class Stats {
@@ -18,17 +21,16 @@ public class Stats {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
     
-	private String dateEnd;
-	private String dateStart;
 	private int userId;
 	
 	private Exercise exercise;
     private List<Training> trainings;
-    
+
     private Double totalReps;
     private Double averageReps;
     private List<List<Map<Object,Object>>> dataPoints = new ArrayList<List<Map<Object,Object>>>();
 
+    
     // Empty constructor
     public Stats() {
     }
@@ -132,11 +134,11 @@ public class Stats {
 	public Double getAverageReps() {
 		return averageReps;
 	}
-
+	@JsonIgnore
 	public void setAverageReps(Double averageReps) {
 		this.averageReps = averageReps;
 	}
-
+	@JsonIgnore
 	public List<List<Map<Object, Object>>> getDataPoints() {
 		return dataPoints;
 	}
@@ -145,21 +147,7 @@ public class Stats {
 		this.dataPoints = dataPoints;
 	}
 
-	public String getDateEnd() {
-		return dateEnd;
-	}
 
-	public void setDateEnd(String dateEnd) {
-		this.dateEnd = dateEnd;
-	}
-
-	public String getDateStart() {
-		return dateStart;
-	}
-
-	public void setDateStart(String dateStart) {
-		this.dateStart = dateStart;
-	}
 
 	public int getUserId() {
 		return userId;
@@ -171,4 +159,19 @@ public class Stats {
     
     
 
+}
+
+ class Points {
+	private int x;
+	private int y;
+	
+	public Points(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public void setY(int y) { this.y = y; }
+	public int getY() {return this.y;}
+	public void setX(int x) { this.x = x; }
+	public int getX() {return this.x;}	
 }

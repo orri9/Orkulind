@@ -78,6 +78,8 @@ public class StatsController {
     		Stats sta = new Stats(ex[i],stats.getStartDate(),stats.getEndDate());
     		sta.setTrainings(trainService.findTrainingsByFilterApi(sta.getExercise(), stats.getStartDate(), sta.getEndDate()));
     		sta.calculate();
+    		sta.getDataPoints().size();
+    		
     		
     		if(sta.getTrainings().size() > 0) {
     			st.add(sta);		    			
