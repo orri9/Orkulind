@@ -22,7 +22,7 @@ public interface SessionRepository extends JpaRepository<Session, Long> {
     
     List<Session> findByType(String type);
 
-    @Query(value = "SELECT p FROM Session p WHERE p.userID = ?1 OR p.userID = 0")
+    @Query(value = "SELECT p FROM Session p WHERE p.userID = ?1")
 	List<Session> findAllUserSessions(int id);
     
 }

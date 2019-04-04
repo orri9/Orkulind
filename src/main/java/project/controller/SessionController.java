@@ -62,7 +62,7 @@ public class SessionController {
     //Remove Session
     @PostMapping("/api/removeSession")
     public void removeSession(@RequestBody Session session) {   		
-    		//session = sessionService.findSession(session.getId());
+    		session = sessionService.findSession(session.getId());
 		sessionService.delete(session);
     }
     

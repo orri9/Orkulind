@@ -22,6 +22,6 @@ public interface ExerciseRepository extends JpaRepository<Exercise, Long> {
     
     List<Exercise> findByType(String type);
 
-    @Query(value = "SELECT p FROM Exercise p WHERE p.userID = ?1 OR p.userID = 0")
+    @Query(value = "SELECT p FROM Exercise p WHERE p.userID = ?1")
 	List<Exercise> findAllUserExercises(int user);
 }
