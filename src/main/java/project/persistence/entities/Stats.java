@@ -134,7 +134,7 @@ public class Stats {
 	public Double getAverageReps() {
 		return averageReps;
 	}
-	@JsonIgnore
+	
 	public void setAverageReps(Double averageReps) {
 		this.averageReps = averageReps;
 	}
